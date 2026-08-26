@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #F3F3F1;
+  --surface: #FFFFFF;
+  --ink: #141414;
+  --muted: #6E6E6E;
+  --line: #E7E6E2;
+  --red: #E8402F;
+  --red-dark: #C22E1F;
+  --blue: #2A55FF;
+  --yellow: #E9FF4D;
+  --purple: #7C4DFF;
+  --card-navy: #141B33;
+  --r-lg: 32px;
+  --r-md: 22px;
+  --r-sm: 14px;
+  --wrap: 1240px;
+}
+
+@layer base {
+  body {
+    font-family: 'Manrope', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--ink);
+    background-color: var(--bg);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6, .dsp {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.025em;
+    font-weight: 800;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D0CB;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9E9D97;
+}
+
+/* Helper classes */
+.wrap-container {
+  max-width: var(--wrap);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .wrap-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.pagecard {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marqueeScrollReverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marqueeScroll 26s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marqueeScroll 34s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marqueeScrollReverse 34s linear infinite;
+}
+
+.animate-marquee:hover, .animate-marquee-slow:hover, .animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+
