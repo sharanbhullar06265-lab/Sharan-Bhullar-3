@@ -64,8 +64,8 @@ export default function App() {
           <div className="flex items-center justify-between w-full shrink-0">
             {/* Logo */}
             <div className="flex flex-col text-left">
-              <span className="font-extrabold text-[12px] h-[32px] leading-[42px] tracking-[0.34em] text-[#111613] uppercase font-['Outfit'] block">
-                D E S I G N
+              <span className="font-extrabold text-[16px] sm:text-[17px] tracking-[0.14em] text-[#111613] uppercase font-['Outfit'] leading-none">
+                DESIGNMYSITES
               </span>
               <span className="text-[12px] font-bold text-[#68716A] text-left mt-1 leading-none font-['Plus_Jakarta_Sans'] block">
                 Web Design &amp; Social Growth
@@ -101,7 +101,7 @@ export default function App() {
 
             {/* Subtext */}
             <p className="text-[12.5px] lg:text-[13px] text-[#68716A] leading-[1.55] max-w-[420px] mt-4 font-normal">
-              Stop losing customers to outdated sites and dead pages. We build fast WordPress &amp; Shopify stores, craft viral content across all platforms, and turn visitors into paying clients.
+              Stop losing customers to outdated sites and inactive pages. We build modern WordPress and Shopify stores, craft viral content across all platforms, and turn attention into paying clients.
             </p>
 
             {/* Email/Phone Input Field with Orange Button */}
@@ -143,19 +143,19 @@ export default function App() {
 
           {/* Bottom Row: Toggle Switch and Portfolio Thumbnails */}
           <div className="flex items-end justify-between w-full pt-4 shrink-0">
-            {/* Bottom-left: Dark rounded toggle/switch button element */}
+            {/* Bottom-left: Green WhatsApp/Phone icon + Message Us Directly */}
             <div className="flex flex-col gap-1.5">
               <button
                 id="call-us-button"
                 onClick={() => setIsContactOpen(true)}
-                className="w-[130px] h-[40px] bg-[#111613] hover:bg-[#202922] rounded-full p-1 pl-1.5 pr-3.5 flex items-center cursor-pointer shadow-xs hover:scale-105 active:scale-95 transition-all shrink-0"
-                title="WhatsApp Us"
+                className="w-[160px] h-[40px] bg-[#111613] hover:bg-[#202922] rounded-full p-1 pl-1.5 pr-3.5 flex items-center cursor-pointer shadow-xs hover:scale-105 active:scale-95 transition-all shrink-0"
+                title="Message Us Directly"
               >
-                <span className="w-7 h-7 rounded-full bg-[#F6F2BE] flex items-center justify-center text-[#111613] shadow-xs shrink-0">
-                  <Phone className="w-3.5 h-3.5 fill-[#111613] text-[#111613]" />
+                <span className="w-7 h-7 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-xs shrink-0">
+                  <Phone className="w-3.5 h-3.5 fill-white text-white" />
                 </span>
                 <span className="text-[11px] font-semibold text-white/90 ml-2 whitespace-nowrap">
-                  WhatsApp Us
+                  Message Us Directly
                 </span>
               </button>
             </div>
@@ -339,7 +339,7 @@ export default function App() {
                         Shopify Stores
                       </h4>
                       <p className="text-[7.5px] text-[#78817A] leading-tight line-clamp-2">
-                        Fast, custom storefronts optimized for smooth checkout and repeat sales.
+                        Custom, high-speed storefronts optimized for smooth checkout and repeat sales.
                       </p>
                     </div>
                     <span className="text-[7.5px] font-bold text-[#111613] mt-1.5 group-hover:text-[#FF6B3D] flex items-center gap-0.5">
@@ -361,7 +361,7 @@ export default function App() {
                         WordPress Sites
                       </h4>
                       <p className="text-[7.5px] text-[#78817A] leading-tight line-clamp-2">
-                        Clean business websites and WooCommerce setups built to rank on Google.
+                        Clean business websites and WooCommerce setups built to rank on search engines.
                       </p>
                     </div>
                     <span className="text-[7.5px] font-bold text-[#111613] mt-1.5 group-hover:text-[#FF6B3D] flex items-center gap-0.5">
@@ -383,7 +383,7 @@ export default function App() {
                         Social Media Growth
                       </h4>
                       <p className="text-[7.5px] text-[#78817A] leading-tight line-clamp-2">
-                        Content calendars, daily posts, reels, and active growth on IG, FB, X &amp; LinkedIn.
+                        Content calendars, daily posts, reels, and active growth on IG, FB, LinkedIn &amp; X.
                       </p>
                     </div>
                     <span className="text-[7.5px] font-bold text-[#111613] mt-1.5 group-hover:text-[#FF6B3D] flex items-center gap-0.5">
@@ -405,7 +405,7 @@ export default function App() {
                         Brand Makeovers
                       </h4>
                       <p className="text-[7.5px] text-[#78817A] leading-tight line-clamp-2">
-                        Unified design assets, modern logos, and aesthetics that build instant authority.
+                        Unified design assets, modern logos, and visual identity that make your business look authoritative.
                       </p>
                     </div>
                     <span className="text-[7.5px] font-bold text-[#111613] mt-1.5 group-hover:text-[#FF6B3D] flex items-center gap-0.5">
@@ -503,7 +503,7 @@ export default function App() {
 
                   {/* Foot Logo Badges Bar */}
                   <div className="flex items-center justify-center pt-1.5 px-1 text-[6.5px] font-bold text-[#555E53] tracking-normal shrink-0">
-                    <span>designmysites.com • Built to Convert</span>
+                    <span>DesignMySites / Built to Convert</span>
                   </div>
                 </div>
 
@@ -511,14 +511,14 @@ export default function App() {
 
               {/* -------------------------------------------------------------
                   Column B (Right Inner Column, ~48% width):
-                  "Services tailored for your brand" + Warm Cream Card
+                  "Complete digital execution for your brand" + Warm Cream Card
                  ------------------------------------------------------------- */}
               <div className="flex flex-col justify-between h-full gap-2.5 min-h-0">
                 
-                {/* Services tailored for your brand intro section */}
+                {/* Services title & subtext */}
                 <div className="shrink-0 pt-0.5">
                   <h3 className="text-[17px] font-extrabold text-[#111613] leading-[1.1] font-['Outfit']">
-                    Services tailored<br />for your brand
+                    Complete digital<br />execution for your brand
                   </h3>
                   <p className="text-[8.5px] text-[#44503E] leading-[1.35] mt-1 line-clamp-3 font-normal">
                     From custom e-commerce builds to daily multi-channel posting, we handle the technical and creative work so you can run your business.
@@ -553,12 +553,12 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Embedded White Rounded Rating Card with Pink Medal Badge */}
+                  {/* Embedded White Rounded Rating Card with Pink Floating Badge */}
                   <div className="bg-white rounded-[22px] p-3.5 shadow-[0_8px_24px_rgba(0,0,0,0.06)] border border-[#ECEEEA] relative mt-auto">
                     
-                    {/* Pink/Magenta Circular Medal Badge overlapping top-right */}
-                    <div className="w-10 h-10 rounded-full bg-[#EA2E5E] text-white flex items-center justify-center shadow-[0_8px_20px_rgba(234,46,94,0.38)] absolute -top-5 right-4 z-10">
-                      <Award className="w-5 h-5 text-white stroke-[2.2]" />
+                    {/* Floating Badge: "★ 100% Done-For-You" */}
+                    <div className="px-2.5 py-1 rounded-full bg-[#EA2E5E] text-white text-[8.5px] font-bold shadow-[0_6px_16px_rgba(234,46,94,0.35)] absolute -top-3.5 right-3 z-10 flex items-center gap-1 select-none whitespace-nowrap">
+                      <span>★ 100% Done-For-You</span>
                     </div>
 
                     <div className="mb-2 pr-8">
@@ -612,7 +612,7 @@ export default function App() {
                           </div>
                         </div>
                         <span className="text-[10.5px] font-extrabold text-[#111613]">
-                          +54k views
+                          +54k monthly views
                         </span>
                       </div>
                     </div>
