@@ -1,0 +1,329 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 320" fill="none">
+  <defs>
+    <!-- Ambient Backdrop Radial Glow -->
+    <radialGradient id="cardWarmSpot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF5EE" stop-opacity="0.6"/>
+      <stop offset="60%" stop-color="#F2DFD5" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#E5C7BA" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Skin Tones -->
+    <linearGradient id="armSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D99B77"/>
+      <stop offset="45%" stop-color="#E5AA8A"/>
+      <stop offset="85%" stop-color="#F0BA9F"/>
+      <stop offset="100%" stop-color="#DC9F7E"/>
+    </linearGradient>
+
+    <linearGradient id="handSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EAB397"/>
+      <stop offset="60%" stop-color="#DF9F80"/>
+      <stop offset="100%" stop-color="#CA8866"/>
+    </linearGradient>
+
+    <!-- Lilac Manicure Nails -->
+    <linearGradient id="lilacNails" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EAE3F2"/>
+      <stop offset="50%" stop-color="#D5C5E5"/>
+      <stop offset="100%" stop-color="#BCA8D0"/>
+    </linearGradient>
+
+    <!-- Glossy Bakelite Phone Body -->
+    <linearGradient id="bakeliteBlack" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#34343B"/>
+      <stop offset="25%" stop-color="#1A1A1E"/>
+      <stop offset="70%" stop-color="#0E0E11"/>
+      <stop offset="100%" stop-color="#26262E"/>
+    </linearGradient>
+
+    <linearGradient id="phoneBaseGradient" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#32323A"/>
+      <stop offset="35%" stop-color="#1C1C20"/>
+      <stop offset="85%" stop-color="#0F0F12"/>
+      <stop offset="100%" stop-color="#1E1E24"/>
+    </linearGradient>
+
+    <!-- Chrome & Specular Highlights -->
+    <linearGradient id="chromeGloss" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="30%" stop-color="#C5C7D0"/>
+      <stop offset="55%" stop-color="#FFFFFF"/>
+      <stop offset="80%" stop-color="#90929C"/>
+      <stop offset="100%" stop-color="#E2E4EB"/>
+    </linearGradient>
+
+    <linearGradient id="specularHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C7D8A" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#363640" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Soft Drop Shadows -->
+    <filter id="phoneCastShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#54362A" flood-opacity="0.28"/>
+    </filter>
+
+    <filter id="handsetShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="2" dy="10" stdDeviation="6" flood-color="#40281F" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+
+  <!-- Background Warm Glow -->
+  <circle cx="180" cy="200" r="140" fill="url(#cardWarmSpot)" pointer-events="none"/>
+
+  <!-- ========================================== -->
+  <!-- 1. WHITE CROCHET LACE DOILY (Under Phone)   -->
+  <!-- ========================================== -->
+  <g transform="translate(180, 275)" opacity="0.92">
+    <!-- Doily Base Oval -->
+    <ellipse cx="0" cy="0" rx="98" ry="34" fill="#FCFAF6" stroke="#EDE6DE" stroke-width="1.5" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.06))"/>
+    
+    <!-- Scalloped Lace Edge Ring -->
+    <path d="
+      M -98,0
+      C -98,6 -92,12 -84,15 C -76,18 -68,22 -58,25 C -48,28 -36,31 -24,33 C -12,34 0,35 12,34
+      C 24,33 36,31 48,28 C 58,25 68,22 76,18 C 84,15 92,10 98,0
+      C 92,-10 84,-15 76,-18 C 68,-22 58,-25 48,-28 C 36,-31 24,-33 12,-34
+      C 0,-35 -12,-34 -24,-33 C -36,-31 -48,-28 -58,-25 C -68,-22 -76,-18 -84,-15 C -92,-12 -98,-6 -98,0 Z"
+      fill="#F9F6F0" stroke="#E6DDD2" stroke-width="1" stroke-dasharray="3 3"/>
+
+    <!-- Delicate Lace Pierced Eyelets -->
+    <g fill="#EFE8DD" opacity="0.75">
+      <circle cx="-80" cy="0" r="2"/>
+      <circle cx="-65" cy="12" r="2.2"/>
+      <circle cx="-45" cy="19" r="2.2"/>
+      <circle cx="-25" cy="23" r="2.2"/>
+      <circle cx="0" cy="24" r="2.4"/>
+      <circle cx="25" cy="23" r="2.2"/>
+      <circle cx="45" cy="19" r="2.2"/>
+      <circle cx="65" cy="12" r="2.2"/>
+      <circle cx="80" cy="0" r="2"/>
+      <circle cx="65" cy="-12" r="2.2"/>
+      <circle cx="45" cy="-19" r="2.2"/>
+      <circle cx="25" cy="-23" r="2.2"/>
+      <circle cx="0" cy="-24" r="2.4"/>
+      <circle cx="-25" cy="-23" r="2.2"/>
+      <circle cx="-45" cy="-19" r="2.2"/>
+      <circle cx="-65" cy="-12" r="2.2"/>
+    </g>
+
+    <!-- Inner Flower Lace Ring -->
+    <ellipse cx="0" cy="0" rx="68" ry="22" fill="none" stroke="#E4DCD0" stroke-width="1.2" stroke-dasharray="4 2.5"/>
+    <ellipse cx="0" cy="0" rx="42" ry="14" fill="none" stroke="#DCD3C4" stroke-width="0.8"/>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 2. VINTAGE BLACK ROTARY TELEPHONE BASE     -->
+  <!-- ========================================== -->
+  <g filter="url(#phoneCastShadow)">
+    <!-- Base Footpad / Shadow rim -->
+    <path d="M 132,274 C 132,283 148,288 180,288 C 212,288 228,283 228,274 L 225,268 C 215,266 145,266 135,268 Z" fill="#0C0C0E"/>
+
+    <!-- Main Pyramid Body of Telephone -->
+    <path d="
+      M 136,270 
+      C 134,264 146,218 152,204
+      C 154,200 162,198 170,198
+      L 190,198
+      C 198,198 206,200 208,204
+      C 214,218 226,264 224,270
+      C 222,276 214,278 180,278
+      C 146,278 138,276 136,270 Z" 
+      fill="url(#phoneBaseGradient)"/>
+
+    <!-- Body Specular Sheen on Left & Top Shoulder -->
+    <path d="M 152,204 C 146,220 138,256 139,268" stroke="url(#specularHighlight)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 158,200 L 202,200" stroke="#686878" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- Telephone Cradle Forks / Plungers (Where handset sits) -->
+    <!-- Left Cradle Hook -->
+    <path d="M 156,198 L 154,188 C 154,186 160,186 161,188 L 163,198 Z" fill="#18181D" stroke="#3E3E48" stroke-width="0.75"/>
+    <rect x="156" y="186" width="3" height="3" rx="0.5" fill="#C5C7D0"/> <!-- Chrome switchhook plunger tip -->
+    <!-- Right Cradle Hook -->
+    <path d="M 197,198 L 199,188 C 199,186 205,186 206,188 L 204,198 Z" fill="#18181D" stroke="#3E3E48" stroke-width="0.75"/>
+    <rect x="201" y="186" width="3" height="3" rx="0.5" fill="#C5C7D0"/> <!-- Chrome switchhook plunger tip -->
+
+    <!-- ========================================== -->
+    <!-- ROTARY DIAL WHEEL ASSEMBLY (Slanted face)  -->
+    <!-- ========================================== -->
+    <g transform="translate(180, 245)">
+      <!-- Outer Chrome Bezel Ring -->
+      <circle cx="0" cy="0" r="29" fill="url(#chromeGloss)"/>
+      <circle cx="0" cy="0" r="27.5" fill="#141416"/>
+      
+      <!-- White Dial Face Plate -->
+      <circle cx="0" cy="0" r="25.5" fill="#FAF8F2" stroke="#D8D2C6" stroke-width="0.5"/>
+
+      <!-- Dial Numbers 1-9, 0 (Rotary Telephone standard layout) -->
+      <!-- 1 --> <text x="13" y="-12" font-family="'Outfit', sans-serif" font-size="5.5" font-weight="900" fill="#18181C" text-anchor="middle">1</text>
+      <!-- 2 --> <text x="18" y="-4" font-family="'Outfit', sans-serif" font-size="5.5" font-weight="900" fill="#18181C" text-anchor="middle">2</text>
+      <!-- 3 --> <text x="18.5" y="6" font-family="'Outfit', sans-serif" font-size="5.5" font-weight="900" fill="#18181C" text-anchor="middle">3</text>
+      <!-- 4 --> <text x="14" y="15" font-family="'Outfit', sans-serif" font-size="5.5" font-weight="900" fill="#18181C" text-anchor="middle">4</text>
+      <!-- 5 --> <text x="6" y="21" font-family="'Outfit', sans-serif" font-size="5.5" font-weight="900" fill="#18181C" text-anchor="middle">5</text>
+      <!-- 6 --> <text x="-4" y="21.5" font-family="'Outfit', sans-serif" font-size="5.5" font-weight="900" fill="#18181C" text-anchor="middle">6</text>
+      <!-- 7 --> <text x="-13" y="17" font-family="'Outfit', sans-serif" font-size="5.5" font-weight="900" fill="#18181C" text-anchor="middle">7</text>
+      <!-- 8 --> <text x="-18.5" y="8.5" font-family="'Outfit', sans-serif" font-size="5.5" font-weight="900" fill="#18181C" text-anchor="middle">8</text>
+      <!-- 9 --> <text x="-19" y="-2" font-family="'Outfit', sans-serif" font-size="5.5" font-weight="900" fill="#18181C" text-anchor="middle">9</text>
+      <!-- 0 --> <text x="-14.5" y="-11" font-family="'Outfit', sans-serif" font-size="5.5" font-weight="900" fill="#18181C" text-anchor="middle">0</text>
+
+      <!-- Clear Transparent Acrylic Wheel with 10 Finger Holes -->
+      <circle cx="0" cy="0" r="25.5" fill="rgba(255,255,255,0.22)" stroke="rgba(255,255,255,0.5)" stroke-width="0.8"/>
+      
+      <!-- 10 Finger Holes in clear wheel -->
+      <g fill="#F2EFE8" stroke="#787885" stroke-width="0.6">
+        <circle cx="13" cy="-14" r="3.5"/>
+        <circle cx="18" cy="-5" r="3.5"/>
+        <circle cx="18.5" cy="5" r="3.5"/>
+        <circle cx="14" cy="14" r="3.5"/>
+        <circle cx="6" cy="19.5" r="3.5"/>
+        <circle cx="-4" cy="20" r="3.5"/>
+        <circle cx="-13" cy="15.5" r="3.5"/>
+        <circle cx="-18" cy="7.5" r="3.5"/>
+        <circle cx="-18.5" cy="-3" r="3.5"/>
+        <circle cx="-14" cy="-12" r="3.5"/>
+      </g>
+
+      <!-- Metal Finger Stop bracket (bottom right at ~4 o'clock) -->
+      <path d="M 12,18 L 19,26 L 16,28 L 9,20 Z" fill="url(#chromeGloss)" stroke="#80808C" stroke-width="0.6"/>
+
+      <!-- Center White Telephone Number Hub / Paper Card with chrome ring -->
+      <circle cx="0" cy="0" r="10.5" fill="url(#chromeGloss)"/>
+      <circle cx="0" cy="0" r="9.2" fill="#FFFFFF" stroke="#D2CCC0" stroke-width="0.5"/>
+      <circle cx="0" cy="0" r="7.5" fill="#FAF7F0"/>
+      <!-- Red Pro telephone logo in center -->
+      <circle cx="0" cy="0" r="3" fill="#F0616B"/>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 3. COILED BLACK TELEPHONE SPRING CORD      -->
+  <!-- ========================================== -->
+  <g>
+    <!-- Spiral Cord hanging down from Handset to Base -->
+    <!-- Realistic 3D helical spiral loops -->
+    <g stroke="#141417" stroke-width="4.2" stroke-linecap="round" fill="none">
+      <!-- Loop 1 (From handset mouthpiece) -->
+      <path d="M 122,168 C 114,175 106,182 110,190 C 114,198 126,192 120,202"/>
+      <!-- Loop 2 -->
+      <path d="M 120,202 C 114,210 105,214 109,222 C 113,230 125,224 119,234"/>
+      <!-- Loop 3 -->
+      <path d="M 119,234 C 113,242 105,246 110,254 C 115,262 127,256 122,266"/>
+      <!-- Loop 4 into telephone base -->
+      <path d="M 122,266 C 118,272 125,276 136,272"/>
+    </g>
+
+    <!-- Specular Gloss on Coils -->
+    <g stroke="#646472" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.8">
+      <path d="M 121,169 C 114,175 107,181 111,189 C 115,197 125,192 120,201"/>
+      <path d="M 119,203 C 114,210 106,213 110,221 C 114,229 124,224 119,233"/>
+      <path d="M 118,235 C 113,242 106,245 111,253 C 116,261 126,256 122,265"/>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 4. LIFTED HANDSET (Held horizontally)      -->
+  <!-- ========================================== -->
+  <g filter="url(#handsetShadow)">
+    <!-- Handset Body (Gently tilted ~-4 degrees) -->
+    <g transform="rotate(-4 175 145)">
+      <!-- Main Handle Contoured Bar -->
+      <path d="M 130,146 L 220,146" stroke="url(#bakeliteBlack)" stroke-width="15" stroke-linecap="round"/>
+      <!-- Top Specular Highlight line -->
+      <path d="M 135,142 L 215,142" stroke="url(#specularHighlight)" stroke-width="2.5" stroke-linecap="round"/>
+
+      <!-- Left Mouthpiece (Transmitter Cup) -->
+      <g transform="translate(126, 146)">
+        <path d="M -2,-7 C -8,-9 -14,-14 -16,-20 C -20,-20 -20,20 -16,20 C -14,14 -8,9 -2,7 Z" fill="url(#bakeliteBlack)"/>
+        <!-- Mouthpiece Cap Rim -->
+        <ellipse cx="-16" cy="0" rx="4.5" ry="17" fill="#1C1C20" stroke="#3A3A42" stroke-width="0.8"/>
+        <ellipse cx="-17" cy="0" rx="3" ry="14" fill="#121214"/>
+        <!-- Perforations in Mic Cap -->
+        <circle cx="-17" cy="0" r="1" fill="#08080A"/>
+        <circle cx="-17" cy="-5" r="0.9" fill="#08080A"/>
+        <circle cx="-17" cy="5" r="0.9" fill="#08080A"/>
+        <circle cx="-17" cy="-9" r="0.8" fill="#08080A"/>
+        <circle cx="-17" cy="9" r="0.8" fill="#08080A"/>
+      </g>
+
+      <!-- Right Earpiece (Receiver Cup) -->
+      <g transform="translate(224, 146)">
+        <path d="M 2,-7 C 8,-9 14,-14 16,-20 C 20,-20 20,20 16,20 C 14,14 8,9 2,7 Z" fill="url(#bakeliteBlack)"/>
+        <!-- Earpiece Cap Rim -->
+        <ellipse cx="16" cy="0" rx="4.5" ry="17" fill="#1C1C20" stroke="#3A3A42" stroke-width="0.8"/>
+        <ellipse cx="17" cy="0" rx="3" ry="14" fill="#121214"/>
+        <ellipse cx="17" cy="0" rx="1.8" ry="8" fill="#2E2E36" opacity="0.5"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 5. WOMAN'S ARM & HAND LIFTING HANDSET      -->
+  <!-- ========================================== -->
+  <g>
+    <!-- Forearm entering from Upper Left corner (diagonal angle) -->
+    <path d="
+      M -10,65
+      C 30,90 65,110 98,124
+      C 108,128 116,134 122,142
+      L 132,152
+      C 120,158 104,152 86,140
+      C 52,118 18,92 -10,78 Z" 
+      fill="url(#armSkin)"
+      filter="drop-shadow(2px 5px 6px rgba(60,30,20,0.18))"/>
+
+    <!-- Delicate Wrist & Hand Palm -->
+    <path d="
+      M 98,124 
+      C 108,128 126,132 144,136 
+      C 158,138 168,142 165,152
+      C 160,158 142,156 128,154 
+      C 114,150 102,140 98,124 Z" 
+      fill="url(#handSkin)"/>
+
+    <!-- Delicate Gold Bangle Bracelet on Wrist -->
+    <path d="M 94,120 C 98,128 104,136 110,144" stroke="url(#chromeGloss)" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M 94,120 C 98,128 104,136 110,144" stroke="#FCE589" stroke-width="1.8" stroke-linecap="round"/>
+
+    <!-- ========================================== -->
+    <!-- HAND FINGERS GRIPPING THE HANDSET          -->
+    <!-- ========================================== -->
+    
+    <!-- 4 Fingers wrapped under & around the handle -->
+    <!-- Index Finger -->
+    <g>
+      <path d="M 134,138 C 137,136 142,140 144,146 C 145,152 141,154 136,153 Z" fill="#E8B095"/>
+      <!-- Lavender Manicured Fingernail -->
+      <ellipse cx="143" cy="148" rx="2.5" ry="1.8" fill="url(#lilacNails)"/>
+    </g>
+
+    <!-- Middle Finger -->
+    <g>
+      <path d="M 143,139 C 147,137 152,141 154,147 C 155,153 150,155 145,154 Z" fill="#DF9F80"/>
+      <!-- Lavender Manicured Fingernail -->
+      <ellipse cx="153" cy="149" rx="2.5" ry="1.8" fill="url(#lilacNails)"/>
+    </g>
+
+    <!-- Ring Finger -->
+    <g>
+      <path d="M 152,140 C 156,138 161,142 163,148 C 164,154 159,156 154,155 Z" fill="#D69472"/>
+      <!-- Lavender Manicured Fingernail -->
+      <ellipse cx="162" cy="150" rx="2.4" ry="1.7" fill="url(#lilacNails)"/>
+    </g>
+
+    <!-- Pinky Finger -->
+    <g>
+      <path d="M 161,142 C 165,140 169,144 171,149 C 172,154 167,157 162,156 Z" fill="#CA8866"/>
+      <!-- Lavender Manicured Fingernail -->
+      <ellipse cx="170" cy="151" rx="2.2" ry="1.6" fill="url(#lilacNails)"/>
+    </g>
+
+    <!-- Thumb resting gently over the top curve of handle -->
+    <g>
+      <path d="M 126,138 C 136,134 154,134 164,140 C 166,144 162,148 152,147 C 140,146 130,144 126,138 Z" fill="#F0BA9F"/>
+      <!-- Thumb Lavender Fingernail -->
+      <ellipse cx="160" cy="141" rx="3" ry="2.2" fill="url(#lilacNails)"/>
+      <!-- Gloss sheen on thumb nail -->
+      <circle cx="159" cy="140.5" r="0.8" fill="#FFFFFF" opacity="0.75"/>
+    </g>
+  </g>
+</svg>

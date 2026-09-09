@@ -13,12 +13,15 @@ import {
   Calendar,
   ArrowRight,
 } from 'lucide-react';
+import { SocialMediaPage } from './components/SocialMediaPage';
+import { WebDesignPage } from './components/WebDesignPage';
+import { AboutPage } from './components/AboutPage';
 
 export default function App() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedEmail, setSubmittedEmail] = useState(false);
-  const [activeTab, setActiveTab] = useState<'Portfolio' | 'WordPress' | 'Shopify' | 'Socials'>('Portfolio');
+  const [activeTab, setActiveTab] = useState<'Portfolio' | 'Web Design' | 'Social Media' | 'About'>('Social Media');
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
@@ -44,36 +47,111 @@ export default function App() {
     }, 2500);
   };
 
+  if (activeTab === 'Social Media') {
+    return (
+      <main className="w-full min-h-screen">
+        <SocialMediaPage
+          onOpenContact={() => setIsContactOpen(true)}
+          onBackToPortfolio={() => setActiveTab('Portfolio')}
+        />
+        {/* Contact / Consultation Modal */}
+        <AnimatePresence>
+          {isContactOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsContactOpen(false)}
+              className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4"
+            >
+              <motion.div
+                initial={{ scale: 0.92, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.92, opacity: 0 }}
+                onClick={(e) => e.stopPropagation()}
+                className="bg-white rounded-[28px] p-6 max-w-md w-full shadow-2xl border border-[#EDEDED]"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="w-8 h-8 rounded-full bg-[#F6F2BE] flex items-center justify-center">
+                      <Phone className="w-4 h-4 text-[#111613]" />
+                    </span>
+                    <h3 className="font-extrabold text-[17px] text-[#111613] font-['Outfit']">Let's Connect</h3>
+                  </div>
+                  <button
+                    onClick={() => setIsContactOpen(false)}
+                    aria-label="Close modal"
+                    className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#F4F4F0] flex items-center justify-center text-[#111613] hover:bg-[#EAEAE6] cursor-pointer transition-colors"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+                <p className="text-[13px] text-[#68716A] mb-4">
+                  Connect with our digital specialists to discuss high-converting WordPress &amp; Shopify websites and multi-platform social media growth.
+                </p>
+                
+                {bookingConfirmed ? (
+                  <div className="p-4 bg-[#E8F5E9] rounded-2xl text-center space-y-1">
+                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#2E7D32] text-white mb-1">
+                      <Check className="w-4 h-4" />
+                    </span>
+                    <p className="text-[13px] font-bold text-[#2E7D32]">Consultation Reserved!</p>
+                    <p className="text-[11px] text-[#4E8D53]">We'll reach out directly to coordinate your strategy session.</p>
+                  </div>
+                ) : (
+                  <div className="space-y-2">
+                    <button
+                      onClick={handleBookCall}
+                      className="w-full min-h-[44px] bg-[#FF6B3D] text-white py-2.5 px-4 rounded-full text-[13px] font-bold hover:bg-[#F25A2B] transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+                    >
+                      Chat on WhatsApp
+                    </button>
+                    <button
+                      onClick={() => setIsContactOpen(false)}
+                      className="w-full min-h-[44px] bg-[#F4F4F0] text-[#111613] py-2.5 px-4 rounded-full text-[13px] font-semibold hover:bg-[#EAEAE6] transition-colors cursor-pointer flex items-center justify-center"
+                    >
+                      Close
+                    </button>
+                  </div>
+                )}
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </main>
+    );
+  }
+
   return (
-    <main className="w-full min-h-screen lg:h-screen lg:w-screen bg-[#EBEBEB] flex items-center justify-center p-2.5 sm:p-4 md:p-6 lg:p-8 select-none overflow-x-hidden overflow-y-auto lg:overflow-hidden">
+    <main className="w-full min-h-screen bg-[#EBEBEB] flex items-center justify-center p-2.5 sm:p-5 md:p-6 lg:p-7 xl:p-8 select-none overflow-x-hidden overflow-y-auto">
       
       {/* Centered Mockup Card (16:10 locked aspect ratio on desktop, stacked vertical card on tablet/phone) */}
       <motion.div
         initial={{ opacity: 0, scale: 0.98, y: 12 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full max-w-[1360px] bg-white rounded-[24px] sm:rounded-[32px] lg:rounded-[36px] shadow-[0_25px_70px_-15px_rgba(0,0,0,0.14)] flex flex-col lg:flex-row overflow-hidden relative border border-[#E2E2E2] lg:aspect-[16/10] my-auto"
+        className="w-full max-w-[1360px] bg-white rounded-[22px] sm:rounded-[30px] lg:rounded-[36px] shadow-[0_25px_70px_-15px_rgba(0,0,0,0.14)] flex flex-col lg:flex-row overflow-hidden relative border border-[#E2E2E2] lg:aspect-[16/10] my-auto"
       >
         
         {/* =========================================================================
             LEFT HALF (52% width on desktop, 100% on tablet/mobile, Pure White Background)
            ========================================================================= */}
-        <div className="w-full lg:w-[52%] h-auto lg:h-full bg-white flex flex-col justify-between p-6 sm:p-8 lg:p-10 xl:p-11 relative shrink-0 font-bold gap-6 lg:gap-0">
+        <div className="w-full lg:w-[52%] h-auto lg:h-full bg-white flex flex-col justify-between p-4.5 xs:p-5 sm:p-7 md:p-8 lg:p-9 xl:p-11 relative shrink-0 font-bold gap-5 sm:gap-6 lg:gap-0">
           
           {/* Top Bar: Brand Logo & Agency Credentials */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full shrink-0 gap-3 sm:gap-0">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full shrink-0 gap-2.5 sm:gap-0">
             {/* Logo */}
             <div className="flex flex-col text-left">
-              <span className="font-extrabold text-[16px] sm:text-[17px] tracking-[0.14em] text-[#111613] uppercase font-['Outfit'] leading-none">
+              <span className="font-extrabold text-[15px] sm:text-[17px] tracking-[0.14em] text-[#111613] uppercase font-['Outfit'] leading-none">
                 DESIGNMYSITES
               </span>
-              <span className="text-[11.5px] sm:text-[12px] font-bold text-[#68716A] text-left mt-1 leading-none font-['Plus_Jakarta_Sans'] block">
+              <span className="text-[11px] sm:text-[12px] font-bold text-[#68716A] text-left mt-1 leading-none font-['Plus_Jakarta_Sans'] block">
                 Web Design &amp; Social Growth
               </span>
             </div>
 
             {/* Credentials Matching Reference */}
-            <div className="flex items-center flex-wrap gap-3 sm:gap-5 text-[11px] sm:text-[11.5px] font-medium text-[#505752]">
+            <div className="flex items-center flex-wrap gap-2.5 sm:gap-4 md:gap-5 text-[10.5px] sm:text-[11.5px] font-medium text-[#505752]">
               <span className="flex items-center gap-1.5 hover:text-[#111613] transition-colors cursor-default">
                 <span className="text-[#848B85] text-[11px]">✓</span> WordPress &amp; Shopify
               </span>
@@ -84,44 +162,47 @@ export default function App() {
           </div>
 
           {/* Middle Hero Section (Vertically Centered) */}
-          <div className="my-auto py-3 lg:py-0 flex flex-col items-center text-center px-1 sm:px-4 max-w-[500px] mx-auto w-full">
+          <div className="my-auto py-2 sm:py-3 lg:py-0 flex flex-col items-center text-center px-1 sm:px-3 md:px-4 max-w-[530px] mx-auto w-full">
             
             {/* Floating pill tag with soft drop shadow */}
             <motion.div
               whileHover={{ y: -2 }}
-              className="px-4 sm:px-5 py-1.5 rounded-full bg-white text-[12px] sm:text-[13px] font-semibold text-[#111613] shadow-[0_8px_20px_rgba(0,0,0,0.06)] border border-[#EDEDED] mb-4 sm:mb-5 inline-flex items-center justify-center cursor-default select-none"
+              className="px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-full bg-white text-[11.5px] sm:text-[13px] font-semibold text-[#111613] shadow-[0_8px_20px_rgba(0,0,0,0.06)] border border-[#EDEDED] mb-3 sm:mb-4 md:mb-5 inline-flex items-center justify-center cursor-default select-none"
             >
               <span>All-In-One Digital Growth</span>
             </motion.div>
 
             {/* Main Display Headline */}
-            <h1 className="text-[25px] sm:text-[32px] md:text-[36px] lg:text-[38px] xl:text-[40px] font-extrabold text-[#111613] leading-[1.14] tracking-[-0.03em] font-['Outfit']">
-              We build high-converting websites and grow your socials hands-free.
+            <h1
+              id="main-hero-headline"
+              className="text-[23px] xs:text-[25px] sm:text-[30px] md:text-[34px] lg:text-[38px] xl:text-[41px] font-extrabold text-[#111613] leading-[1.15] sm:leading-[1.14] tracking-[-0.03em] font-['Outfit',sans-serif]"
+            >
+              We build high-converting websites and run your socials while you run your business.
             </h1>
 
             {/* Subtext */}
-            <p className="text-[12px] sm:text-[12.5px] lg:text-[13px] text-[#68716A] leading-[1.55] max-w-[420px] mt-3 sm:mt-4 font-normal">
-              Stop losing customers to outdated sites and inactive pages. We build modern WordPress and Shopify stores, craft viral content across all platforms, and turn attention into paying clients.
+            <p className="text-[11.5px] sm:text-[12.5px] lg:text-[13px] text-[#68716A] leading-[1.5] sm:leading-[1.55] max-w-[420px] mt-2.5 sm:mt-3.5 md:mt-4 font-normal">
+              We build WordPress &amp; Shopify websites, improve SEO, and grow your social media.
             </p>
 
-            {/* Email/Phone Input Field with Orange Button */}
-            <form onSubmit={handleSubmit} className="w-full max-w-[420px] mt-5 sm:mt-6 bg-white rounded-full p-1.5 pl-3.5 sm:pl-5 flex items-center justify-between shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-[#ECEEEA] relative transition-shadow focus-within:shadow-[0_14px_36px_rgba(255,107,61,0.16)]">
+            {/* Email Input Field with Orange Button */}
+            <form onSubmit={handleSubmit} className="w-full max-w-[420px] mt-4 sm:mt-5 md:mt-6 bg-white rounded-full p-1 sm:p-1.5 pl-3 sm:pl-4 md:pl-5 flex items-center justify-between shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-[#ECEEEA] relative transition-shadow focus-within:shadow-[0_14px_36px_rgba(255,107,61,0.16)]">
               <input
-                type="text"
+                type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email or phone number"
-                className="text-[12px] sm:text-[13px] text-[#111613] placeholder-[#9EA5A0] bg-transparent outline-none flex-1 pr-2 font-normal min-w-0"
+                placeholder="Enter your email"
+                className="text-[11.5px] sm:text-[12.5px] md:text-[13px] text-[#111613] placeholder-[#9EA5A0] bg-transparent outline-none flex-1 pr-2 font-normal min-w-0"
               />
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.96 }}
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#FF6B3D] hover:bg-[#F25A2B] text-white px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11.5px] sm:text-[13px] font-bold shadow-[0_4px_14px_rgba(255,107,61,0.38)] transition-all cursor-pointer shrink-0 disabled:opacity-80 whitespace-nowrap"
+                className="bg-[#FF6B3D] hover:bg-[#F25A2B] text-white px-3.5 sm:px-5 md:px-6 py-2 sm:py-2.5 rounded-full text-[11.5px] sm:text-[12.5px] md:text-[13px] font-bold shadow-[0_4px_14px_rgba(255,107,61,0.38)] transition-all cursor-pointer shrink-0 disabled:opacity-80 whitespace-nowrap min-h-[38px] sm:min-h-[42px] flex items-center justify-center"
               >
-                {isSubmitting ? 'Sending...' : 'Chat on WhatsApp'}
+                {isSubmitting ? 'Signing up...' : 'Sign Up'}
               </motion.button>
             </form>
 
@@ -135,24 +216,31 @@ export default function App() {
                   className="mt-3 px-3 py-1 bg-[#E8F5E9] border border-[#C8E6C9] rounded-full text-[11px] font-semibold text-[#2E7D32] flex items-center gap-1.5 shadow-xs"
                 >
                   <Check className="w-3.5 h-3.5 text-[#2E7D32]" />
-                  <span>Thank you! Opening WhatsApp chat for priority consultation...</span>
+                  <span>Thank you for signing up! We&apos;ll be in touch shortly.</span>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          {/* Bottom Row: Toggle Switch and Portfolio Thumbnails */}
-          <div className="flex flex-col-reverse sm:flex-row items-center sm:items-end justify-between w-full pt-4 gap-4 sm:gap-0 shrink-0">
-            {/* Bottom-left: Green WhatsApp/Phone icon + Message Us Directly */}
-            <div className="flex flex-col gap-1.5">
+          {/* Bottom Row: WhatsApp Button and Portfolio Thumbnails */}
+          <div className="flex flex-col-reverse sm:flex-row items-center sm:items-end justify-between w-full pt-3 sm:pt-4 gap-3.5 sm:gap-0 shrink-0">
+            {/* Bottom-left: Green WhatsApp icon + Message Us Directly */}
+            <div className="flex flex-col gap-1.5 w-full sm:w-auto items-center sm:items-start">
               <button
                 id="call-us-button"
                 onClick={() => setIsContactOpen(true)}
-                className="w-[160px] h-[40px] min-h-[40px] bg-[#111613] hover:bg-[#202922] rounded-full p-1 pl-1.5 pr-3.5 flex items-center cursor-pointer shadow-xs hover:scale-105 active:scale-95 transition-all shrink-0"
+                className="w-full sm:w-[160px] max-w-[200px] sm:max-w-none h-[42px] sm:h-[40px] min-h-[40px] bg-[#111613] hover:bg-[#202922] rounded-full p-1 pl-1.5 pr-3.5 flex items-center justify-center sm:justify-start cursor-pointer shadow-xs hover:scale-105 active:scale-95 transition-all shrink-0"
                 title="Message Us Directly"
               >
                 <span className="w-7 h-7 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-xs shrink-0">
-                  <Phone className="w-3.5 h-3.5 fill-white text-white" />
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-3.5 h-3.5 fill-white text-white"
+                    fill="currentColor"
+                  >
+                    <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15-.2.3-.777.978-.953 1.178-.175.2-.351.225-.651.075-.301-.15-1.27-.468-2.42-1.493-.894-.798-1.498-1.784-1.674-2.084-.176-.3-.019-.462.132-.612.136-.135.301-.35.451-.525.15-.175.2-.3.301-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.63-.927-2.234-.244-.588-.492-.508-.676-.518-.175-.008-.376-.01-.577-.01-.2 0-.526.075-.802.375-.276.3-1.053 1.028-1.053 2.507 0 1.478 1.078 2.905 1.228 3.105.15.2 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.634.721.23 1.378.2 1.9.122.581-.088 1.78-.727 2.03-1.428.251-.7.251-1.302.176-1.428-.075-.125-.276-.2-.576-.35z" />
+                    <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.947.56 3.766 1.528 5.305L2.1 22l4.856-1.396A9.957 9.957 0 0 0 12.004 22C17.525 22 22 17.525 22 12.004 22 6.48 17.525 2 12.004 2zm0 18.297c-1.688 0-3.255-.494-4.577-1.346l-.328-.21-2.887.83.845-2.813-.23-.342A8.257 8.257 0 0 1 3.708 12c0-4.575 3.722-8.296 8.296-8.296 4.575 0 8.296 3.721 8.296 8.296 0 4.575-3.721 8.297-8.296 8.297z" />
+                  </svg>
                 </span>
                 <span className="text-[11px] font-semibold text-white/90 ml-2 whitespace-nowrap">
                   Message Us Directly
@@ -161,17 +249,17 @@ export default function App() {
             </div>
 
             {/* Bottom-right: "Recent client builds & viral campaigns" + 5 Miniature Capsules */}
-            <div className="flex flex-col items-center sm:items-end">
-              <div className="text-center sm:text-right mb-2.5">
-                <span className="text-[14px] sm:text-[16px] lg:text-[17px] font-bold text-[#111613] leading-[1.18] tracking-[-0.02em] block font-['Outfit']">
-                  Recent client builds &amp;
+            <div className="flex flex-col items-center sm:items-end w-full sm:w-auto">
+              <div className="text-center sm:text-right mb-2 sm:mb-2.5 whitespace-normal sm:whitespace-nowrap">
+                <span className="text-[13px] sm:text-[15px] lg:text-[17px] font-bold text-[#111613] leading-[1.18] tracking-[-0.02em] font-['Outfit'] inline">
+                  Recent client builds &amp;{' '}
                 </span>
-                <span className="text-[14px] sm:text-[16px] lg:text-[17px] font-bold text-[#111613] leading-[1.18] tracking-[-0.02em] block font-['Outfit'] mt-0.5">
+                <span className="text-[13px] sm:text-[15px] lg:text-[17px] font-bold text-[#111613] leading-[1.18] tracking-[-0.02em] font-['Outfit'] inline">
                   viral campaigns
                 </span>
               </div>
 
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center justify-center sm:justify-end gap-1.5">
                 {/* Capsule 1: Blue Marketing Pill */}
                 <motion.div
                   whileHover={{ scale: 1.08, y: -2 }}
@@ -258,7 +346,7 @@ export default function App() {
               <div className="bg-white rounded-full p-1 flex items-center gap-1 shadow-xs border border-white/60 overflow-x-auto no-scrollbar max-w-[calc(100%-48px)] sm:max-w-none">
                 <button
                   onClick={() => setActiveTab('Portfolio')}
-                  className={`px-3 py-1 rounded-full text-[11.5px] font-bold transition-all cursor-pointer whitespace-nowrap ${
+                  className={`px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-[11.5px] font-bold transition-all cursor-pointer whitespace-nowrap ${
                     activeTab === 'Portfolio'
                       ? 'bg-[#B9D99A] text-[#1E2E17] shadow-xs'
                       : 'text-[#68716A] hover:text-[#111613]'
@@ -267,38 +355,38 @@ export default function App() {
                   Portfolio
                 </button>
                 <button
-                  onClick={() => setActiveTab('WordPress')}
-                  className={`px-2.5 py-1 rounded-full text-[11.5px] font-semibold transition-all cursor-pointer whitespace-nowrap ${
-                    activeTab === 'WordPress'
-                      ? 'bg-[#B9D99A] text-[#1E2E17]'
+                  onClick={() => setActiveTab('Web Design')}
+                  className={`px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-[11.5px] font-semibold transition-all cursor-pointer whitespace-nowrap ${
+                    activeTab === 'Web Design'
+                      ? 'bg-[#B9D99A] text-[#1E2E17] shadow-xs'
                       : 'text-[#68716A] hover:text-[#111613]'
                   }`}
                 >
-                  WordPress
+                  Web Design
                 </button>
                 <button
-                  onClick={() => setActiveTab('Shopify')}
-                  className={`px-2.5 py-1 rounded-full text-[11.5px] font-semibold transition-all cursor-pointer whitespace-nowrap ${
-                    activeTab === 'Shopify'
-                      ? 'bg-[#B9D99A] text-[#1E2E17]'
+                  onClick={() => setActiveTab('Social Media')}
+                  className={`px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-[11.5px] font-semibold transition-all cursor-pointer whitespace-nowrap ${
+                    activeTab === 'Social Media'
+                      ? 'bg-[#B9D99A] text-[#1E2E17] shadow-xs'
                       : 'text-[#68716A] hover:text-[#111613]'
                   }`}
                 >
-                  Shopify
+                  Social Media
                 </button>
                 <button
-                  onClick={() => setActiveTab('Socials')}
-                  className={`px-2.5 py-1 rounded-full text-[11.5px] font-semibold transition-all cursor-pointer whitespace-nowrap ${
-                    activeTab === 'Socials'
-                      ? 'bg-[#B9D99A] text-[#1E2E17]'
+                  onClick={() => setActiveTab('About')}
+                  className={`px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-[11.5px] font-semibold transition-all cursor-pointer whitespace-nowrap ${
+                    activeTab === 'About'
+                      ? 'bg-[#B9D99A] text-[#1E2E17] shadow-xs'
                       : 'text-[#68716A] hover:text-[#111613]'
                   }`}
                 >
-                  Socials
+                  About
                 </button>
                 <button
                   onClick={() => setIsContactOpen(true)}
-                  className="px-3 py-1 rounded-full text-[11.5px] font-bold text-[#111613] hover:text-[#FF6B3D] transition-colors cursor-pointer whitespace-nowrap"
+                  className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-[11.5px] font-bold text-[#111613] hover:text-[#FF6B3D] transition-colors cursor-pointer whitespace-nowrap"
                 >
                   Chat Now
                 </button>
@@ -314,8 +402,35 @@ export default function App() {
               </button>
             </div>
 
-            {/* Main Body inside Green Container: 2-Column Split */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 flex-1 min-h-0 items-stretch">
+            {/* Main Body inside Green Container: Switchable Dynamic Pages */}
+            <AnimatePresence mode="wait">
+              {activeTab === 'Social Media' ? (
+                <SocialMediaPage
+                  key="social-media"
+                  onOpenContact={() => setIsContactOpen(true)}
+                  onBackToPortfolio={() => setActiveTab('Portfolio')}
+                />
+              ) : activeTab === 'Web Design' ? (
+                <WebDesignPage
+                  key="web-design"
+                  onOpenContact={() => setIsContactOpen(true)}
+                  onBackToPortfolio={() => setActiveTab('Portfolio')}
+                />
+              ) : activeTab === 'About' ? (
+                <AboutPage
+                  key="about"
+                  onOpenContact={() => setIsContactOpen(true)}
+                  onBackToPortfolio={() => setActiveTab('Portfolio')}
+                />
+              ) : (
+                <motion.div
+                  key="portfolio"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.25 }}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-3.5 flex-1 min-h-0 items-stretch"
+                >
               
               {/* -------------------------------------------------------------
                   Column A (Left Inner Column, ~48% width):
@@ -530,8 +645,8 @@ export default function App() {
                   
                   {/* Top: Large Headline + Hand-Drawn White Looping Arrow */}
                   <div className="relative pt-1">
-                    <div className="flex items-start justify-between">
-                      <h4 className="text-[19px] xl:text-[21px] font-extrabold text-[#111613] leading-[1.12] tracking-[-0.02em] font-['Outfit']">
+                    <div className="flex items-start justify-between gap-1">
+                      <h4 className="text-[17px] xs:text-[18px] sm:text-[20px] md:text-[21px] lg:text-[19px] xl:text-[21px] font-extrabold text-[#111613] leading-[1.12] tracking-[-0.02em] font-['Outfit']">
                         Before working<br />
                         with us, their pages<br />
                         were completely silent.
@@ -539,7 +654,7 @@ export default function App() {
 
                       {/* Hand-drawn Looping White Arrow pointing down */}
                       <svg
-                        className="w-18 h-16 text-white ml-auto -mt-2 -mr-1 drop-shadow-xs"
+                        className="w-12 h-10 sm:w-16 sm:h-14 text-white ml-auto -mt-1 sm:-mt-2 -mr-1 drop-shadow-xs shrink-0"
                         viewBox="0 0 90 75"
                         fill="none"
                         stroke="currentColor"
@@ -623,7 +738,9 @@ export default function App() {
 
               </div>
 
-            </div>
+            </motion.div>
+            )}
+            </AnimatePresence>
 
           </div>
 
@@ -680,7 +797,14 @@ export default function App() {
                     onClick={handleBookCall}
                     className="w-full bg-[#FF6B3D] text-white py-2.5 rounded-full text-[13px] font-bold hover:bg-[#F25A2B] transition-colors cursor-pointer flex items-center justify-center gap-1.5"
                   >
-                    <Phone className="w-4 h-4" />
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-4 h-4 fill-white text-white"
+                      fill="currentColor"
+                    >
+                      <path d="M17.472 14.382c-.301-.15-1.78-.878-2.056-.978-.276-.1-.476-.15-.676.15-.2.3-.777.978-.953 1.178-.175.2-.351.225-.651.075-.301-.15-1.27-.468-2.42-1.493-.894-.798-1.498-1.784-1.674-2.084-.176-.3-.019-.462.132-.612.136-.135.301-.35.451-.525.15-.175.2-.3.301-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.63-.927-2.234-.244-.588-.492-.508-.676-.518-.175-.008-.376-.01-.577-.01-.2 0-.526.075-.802.375-.276.3-1.053 1.028-1.053 2.507 0 1.478 1.078 2.905 1.228 3.105.15.2 2.122 3.24 5.141 4.544.718.31 1.279.496 1.716.634.721.23 1.378.2 1.9.122.581-.088 1.78-.727 2.03-1.428.251-.7.251-1.302.176-1.428-.075-.125-.276-.2-.576-.35z" />
+                      <path d="M12.004 2C6.48 2 2 6.48 2 12.004c0 1.947.56 3.766 1.528 5.305L2.1 22l4.856-1.396A9.957 9.957 0 0 0 12.004 22C17.525 22 22 17.525 22 6.48 17.525 2 12.004 2zm0 18.297c-1.688 0-3.255-.494-4.577-1.346l-.328-.21-2.887.83.845-2.813-.23-.342A8.257 8.257 0 0 1 3.708 12c0-4.575 3.722-8.296 8.296-8.296 4.575 0 8.296 3.721 8.296 8.296 0 4.575-3.721 8.297-8.296 8.297z" />
+                    </svg>
                     Chat on WhatsApp
                   </button>
                   <button
@@ -717,20 +841,21 @@ export default function App() {
                 <span className="font-extrabold text-[15px] text-[#111613] font-['Outfit']">Navigation</span>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-7 h-7 rounded-full bg-[#F4F4F0] flex items-center justify-center text-[#111613]"
+                  aria-label="Close navigation menu"
+                  className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#F4F4F0] flex items-center justify-center text-[#111613] hover:bg-[#EAEAE6] transition-colors cursor-pointer"
                 >
                   <X className="w-4 h-4" />
                 </button>
               </div>
               <div className="flex flex-col gap-1">
-                {(['Portfolio', 'WordPress', 'Shopify', 'Socials'] as const).map((tab) => (
+                {(['Portfolio', 'Web Design', 'Social Media', 'About'] as const).map((tab) => (
                   <button
                     key={tab}
                     onClick={() => {
                       setActiveTab(tab);
                       setIsMobileMenuOpen(false);
                     }}
-                    className={`text-left px-3 py-2 rounded-xl text-[13px] font-semibold capitalize transition-colors ${
+                    className={`text-left px-3.5 py-2.5 min-h-[44px] flex items-center rounded-xl text-[13px] font-semibold capitalize transition-colors cursor-pointer ${
                       activeTab === tab ? 'bg-[#CEE7C1] text-[#1E2E17]' : 'hover:bg-[#F6F6F2] text-[#44503E]'
                     }`}
                   >
@@ -742,7 +867,7 @@ export default function App() {
                     setIsMobileMenuOpen(false);
                     setIsContactOpen(true);
                   }}
-                  className="text-left px-3 py-2 rounded-xl text-[13px] font-bold text-[#FF6B3D] hover:bg-[#FFF4F0] transition-colors mt-1"
+                  className="text-left px-3.5 py-2.5 min-h-[44px] flex items-center rounded-xl text-[13px] font-bold text-[#FF6B3D] hover:bg-[#FFF4F0] transition-colors mt-1 cursor-pointer"
                 >
                   Chat Now →
                 </button>
@@ -773,7 +898,8 @@ export default function App() {
                 <span className="text-[12px] font-bold text-[#FF6B3D] uppercase tracking-wider">Showcase</span>
                 <button
                   onClick={() => setSelectedCard(null)}
-                  className="w-7 h-7 rounded-full bg-[#F4F4F0] flex items-center justify-center text-[#111613] hover:bg-[#EAEAE6] cursor-pointer"
+                  aria-label="Close showcase modal"
+                  className="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full bg-[#F4F4F0] flex items-center justify-center text-[#111613] hover:bg-[#EAEAE6] cursor-pointer transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -789,7 +915,7 @@ export default function App() {
                   setSelectedCard(null);
                   setIsContactOpen(true);
                 }}
-                className="w-full bg-[#111613] text-white py-2.5 rounded-full text-[13px] font-bold hover:bg-[#2A2E2B] transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+                className="w-full min-h-[44px] bg-[#111613] text-white py-3 px-4 rounded-full text-[13px] font-bold hover:bg-[#2A2E2B] transition-colors cursor-pointer flex items-center justify-center gap-1.5"
               >
                 <span>Inquire about this service</span>
                 <ArrowRight className="w-4 h-4" />
