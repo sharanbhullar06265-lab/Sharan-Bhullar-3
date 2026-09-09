@@ -45,35 +45,35 @@ export default function App() {
   };
 
   return (
-    <main className="overflow-hidden w-screen h-screen bg-[#EBEBEB] flex items-center justify-center p-3 sm:p-5 md:p-6 lg:p-8 select-none">
+    <main className="w-full min-h-screen lg:h-screen lg:w-screen bg-[#EBEBEB] flex items-center justify-center p-2.5 sm:p-4 md:p-6 lg:p-8 select-none overflow-x-hidden overflow-y-auto lg:overflow-hidden">
       
-      {/* Centered Mockup Card (16:10 locked aspect ratio container, 36px rounded corners matching reference) */}
+      {/* Centered Mockup Card (16:10 locked aspect ratio on desktop, stacked vertical card on tablet/phone) */}
       <motion.div
         initial={{ opacity: 0, scale: 0.98, y: 12 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full max-w-[1360px] aspect-[16/10] bg-white rounded-[36px] shadow-[0_25px_70px_-15px_rgba(0,0,0,0.14)] flex overflow-hidden relative border border-[#E2E2E2]"
+        className="w-full max-w-[1360px] bg-white rounded-[24px] sm:rounded-[32px] lg:rounded-[36px] shadow-[0_25px_70px_-15px_rgba(0,0,0,0.14)] flex flex-col lg:flex-row overflow-hidden relative border border-[#E2E2E2] lg:aspect-[16/10] my-auto"
       >
         
         {/* =========================================================================
-            LEFT HALF (52% width, Pure White Background)
+            LEFT HALF (52% width on desktop, 100% on tablet/mobile, Pure White Background)
            ========================================================================= */}
-        <div className="w-[52%] h-full bg-white flex flex-col justify-between p-8 lg:p-10 xl:p-11 relative shrink-0 font-bold">
+        <div className="w-full lg:w-[52%] h-auto lg:h-full bg-white flex flex-col justify-between p-6 sm:p-8 lg:p-10 xl:p-11 relative shrink-0 font-bold gap-6 lg:gap-0">
           
           {/* Top Bar: Brand Logo & Agency Credentials */}
-          <div className="flex items-center justify-between w-full shrink-0">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full shrink-0 gap-3 sm:gap-0">
             {/* Logo */}
             <div className="flex flex-col text-left">
               <span className="font-extrabold text-[16px] sm:text-[17px] tracking-[0.14em] text-[#111613] uppercase font-['Outfit'] leading-none">
                 DESIGNMYSITES
               </span>
-              <span className="text-[12px] font-bold text-[#68716A] text-left mt-1 leading-none font-['Plus_Jakarta_Sans'] block">
+              <span className="text-[11.5px] sm:text-[12px] font-bold text-[#68716A] text-left mt-1 leading-none font-['Plus_Jakarta_Sans'] block">
                 Web Design &amp; Social Growth
               </span>
             </div>
 
             {/* Credentials Matching Reference */}
-            <div className="flex items-center gap-5 text-[11.5px] font-medium text-[#505752]">
+            <div className="flex items-center flex-wrap gap-3 sm:gap-5 text-[11px] sm:text-[11.5px] font-medium text-[#505752]">
               <span className="flex items-center gap-1.5 hover:text-[#111613] transition-colors cursor-default">
                 <span className="text-[#848B85] text-[11px]">✓</span> WordPress &amp; Shopify
               </span>
@@ -84,42 +84,42 @@ export default function App() {
           </div>
 
           {/* Middle Hero Section (Vertically Centered) */}
-          <div className="my-auto flex flex-col items-center text-center px-4 max-w-[500px] mx-auto w-full">
+          <div className="my-auto py-3 lg:py-0 flex flex-col items-center text-center px-1 sm:px-4 max-w-[500px] mx-auto w-full">
             
             {/* Floating pill tag with soft drop shadow */}
             <motion.div
               whileHover={{ y: -2 }}
-              className="px-5 py-1.5 rounded-full bg-white text-[13px] font-semibold text-[#111613] shadow-[0_8px_20px_rgba(0,0,0,0.06)] border border-[#EDEDED] mb-5 inline-flex items-center justify-center cursor-default select-none"
+              className="px-4 sm:px-5 py-1.5 rounded-full bg-white text-[12px] sm:text-[13px] font-semibold text-[#111613] shadow-[0_8px_20px_rgba(0,0,0,0.06)] border border-[#EDEDED] mb-4 sm:mb-5 inline-flex items-center justify-center cursor-default select-none"
             >
               <span>All-In-One Digital Growth</span>
             </motion.div>
 
             {/* Main Display Headline */}
-            <h1 className="text-[34px] lg:text-[38px] xl:text-[40px] font-extrabold text-[#111613] leading-[1.12] tracking-[-0.03em] font-['Outfit']">
+            <h1 className="text-[25px] sm:text-[32px] md:text-[36px] lg:text-[38px] xl:text-[40px] font-extrabold text-[#111613] leading-[1.14] tracking-[-0.03em] font-['Outfit']">
               We build high-converting websites and grow your socials hands-free.
             </h1>
 
             {/* Subtext */}
-            <p className="text-[12.5px] lg:text-[13px] text-[#68716A] leading-[1.55] max-w-[420px] mt-4 font-normal">
+            <p className="text-[12px] sm:text-[12.5px] lg:text-[13px] text-[#68716A] leading-[1.55] max-w-[420px] mt-3 sm:mt-4 font-normal">
               Stop losing customers to outdated sites and inactive pages. We build modern WordPress and Shopify stores, craft viral content across all platforms, and turn attention into paying clients.
             </p>
 
             {/* Email/Phone Input Field with Orange Button */}
-            <form onSubmit={handleSubmit} className="w-full max-w-[420px] mt-6 bg-white rounded-full p-1.5 pl-5 flex items-center justify-between shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-[#ECEEEA] relative transition-shadow focus-within:shadow-[0_14px_36px_rgba(255,107,61,0.16)]">
+            <form onSubmit={handleSubmit} className="w-full max-w-[420px] mt-5 sm:mt-6 bg-white rounded-full p-1.5 pl-3.5 sm:pl-5 flex items-center justify-between shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-[#ECEEEA] relative transition-shadow focus-within:shadow-[0_14px_36px_rgba(255,107,61,0.16)]">
               <input
                 type="text"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email or phone number"
-                className="text-[13px] text-[#111613] placeholder-[#9EA5A0] bg-transparent outline-none flex-1 pr-2 font-normal"
+                className="text-[12px] sm:text-[13px] text-[#111613] placeholder-[#9EA5A0] bg-transparent outline-none flex-1 pr-2 font-normal min-w-0"
               />
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.96 }}
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#FF6B3D] hover:bg-[#F25A2B] text-white px-5 py-2.5 rounded-full text-[13px] font-bold shadow-[0_4px_14px_rgba(255,107,61,0.38)] transition-all cursor-pointer shrink-0 disabled:opacity-80 whitespace-nowrap"
+                className="bg-[#FF6B3D] hover:bg-[#F25A2B] text-white px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11.5px] sm:text-[13px] font-bold shadow-[0_4px_14px_rgba(255,107,61,0.38)] transition-all cursor-pointer shrink-0 disabled:opacity-80 whitespace-nowrap"
               >
                 {isSubmitting ? 'Sending...' : 'Chat on WhatsApp'}
               </motion.button>
@@ -142,13 +142,13 @@ export default function App() {
           </div>
 
           {/* Bottom Row: Toggle Switch and Portfolio Thumbnails */}
-          <div className="flex items-end justify-between w-full pt-4 shrink-0">
+          <div className="flex flex-col-reverse sm:flex-row items-center sm:items-end justify-between w-full pt-4 gap-4 sm:gap-0 shrink-0">
             {/* Bottom-left: Green WhatsApp/Phone icon + Message Us Directly */}
             <div className="flex flex-col gap-1.5">
               <button
                 id="call-us-button"
                 onClick={() => setIsContactOpen(true)}
-                className="w-[160px] h-[40px] bg-[#111613] hover:bg-[#202922] rounded-full p-1 pl-1.5 pr-3.5 flex items-center cursor-pointer shadow-xs hover:scale-105 active:scale-95 transition-all shrink-0"
+                className="w-[160px] h-[40px] min-h-[40px] bg-[#111613] hover:bg-[#202922] rounded-full p-1 pl-1.5 pr-3.5 flex items-center cursor-pointer shadow-xs hover:scale-105 active:scale-95 transition-all shrink-0"
                 title="Message Us Directly"
               >
                 <span className="w-7 h-7 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-xs shrink-0">
@@ -161,12 +161,12 @@ export default function App() {
             </div>
 
             {/* Bottom-right: "Recent client builds & viral campaigns" + 5 Miniature Capsules */}
-            <div className="flex flex-col items-end">
-              <div className="text-right mb-2.5">
-                <span className="text-[16px] lg:text-[17px] font-bold text-[#111613] leading-[1.18] tracking-[-0.02em] block font-['Outfit']">
+            <div className="flex flex-col items-center sm:items-end">
+              <div className="text-center sm:text-right mb-2.5">
+                <span className="text-[14px] sm:text-[16px] lg:text-[17px] font-bold text-[#111613] leading-[1.18] tracking-[-0.02em] block font-['Outfit']">
                   Recent client builds &amp;
                 </span>
-                <span className="text-[16px] lg:text-[17px] font-bold text-[#111613] leading-[1.18] tracking-[-0.02em] block font-['Outfit'] mt-0.5">
+                <span className="text-[14px] sm:text-[16px] lg:text-[17px] font-bold text-[#111613] leading-[1.18] tracking-[-0.02em] block font-['Outfit'] mt-0.5">
                   viral campaigns
                 </span>
               </div>
@@ -245,20 +245,20 @@ export default function App() {
         </div>
 
         {/* =========================================================================
-            RIGHT HALF (48% width, Soft Pastel Sage Green Background #CEE7C1)
+            RIGHT HALF (48% width on desktop, 100% on tablet/mobile, Soft Pastel Sage Green Background #CEE7C1)
            ========================================================================= */}
-        <div className="w-[48%] h-full p-2.5 sm:p-3.5 lg:p-2.5 flex flex-col shrink-0">
+        <div className="w-full lg:w-[48%] h-auto lg:h-full p-2.5 sm:p-3.5 lg:p-2.5 flex flex-col shrink-0">
           
           {/* Rounded Outer Sage Frame */}
-          <div className="w-full h-full bg-[#CEE7C1] rounded-[30px] p-4 sm:p-5 flex flex-col justify-between overflow-hidden shadow-[inset_0_1px_3px_rgba(255,255,255,0.5)]">
+          <div className="w-full h-auto lg:h-full bg-[#CEE7C1] rounded-[22px] sm:rounded-[30px] p-3.5 sm:p-5 flex flex-col justify-between overflow-hidden shadow-[inset_0_1px_3px_rgba(255,255,255,0.5)] gap-3.5 lg:gap-0">
             
             {/* Top Navigation Bar inside Sage Frame */}
             <div className="flex items-center justify-between w-full gap-2 shrink-0 mb-3">
               {/* Pure White Pill Navigation */}
-              <div className="bg-white rounded-full p-1 flex items-center gap-1 shadow-xs border border-white/60">
+              <div className="bg-white rounded-full p-1 flex items-center gap-1 shadow-xs border border-white/60 overflow-x-auto no-scrollbar max-w-[calc(100%-48px)] sm:max-w-none">
                 <button
                   onClick={() => setActiveTab('Portfolio')}
-                  className={`px-3 py-1 rounded-full text-[11.5px] font-bold transition-all cursor-pointer ${
+                  className={`px-3 py-1 rounded-full text-[11.5px] font-bold transition-all cursor-pointer whitespace-nowrap ${
                     activeTab === 'Portfolio'
                       ? 'bg-[#B9D99A] text-[#1E2E17] shadow-xs'
                       : 'text-[#68716A] hover:text-[#111613]'
@@ -268,7 +268,7 @@ export default function App() {
                 </button>
                 <button
                   onClick={() => setActiveTab('WordPress')}
-                  className={`px-2.5 py-1 rounded-full text-[11.5px] font-semibold transition-all cursor-pointer ${
+                  className={`px-2.5 py-1 rounded-full text-[11.5px] font-semibold transition-all cursor-pointer whitespace-nowrap ${
                     activeTab === 'WordPress'
                       ? 'bg-[#B9D99A] text-[#1E2E17]'
                       : 'text-[#68716A] hover:text-[#111613]'
@@ -278,7 +278,7 @@ export default function App() {
                 </button>
                 <button
                   onClick={() => setActiveTab('Shopify')}
-                  className={`px-2.5 py-1 rounded-full text-[11.5px] font-semibold transition-all cursor-pointer ${
+                  className={`px-2.5 py-1 rounded-full text-[11.5px] font-semibold transition-all cursor-pointer whitespace-nowrap ${
                     activeTab === 'Shopify'
                       ? 'bg-[#B9D99A] text-[#1E2E17]'
                       : 'text-[#68716A] hover:text-[#111613]'
@@ -288,7 +288,7 @@ export default function App() {
                 </button>
                 <button
                   onClick={() => setActiveTab('Socials')}
-                  className={`px-2.5 py-1 rounded-full text-[11.5px] font-semibold transition-all cursor-pointer ${
+                  className={`px-2.5 py-1 rounded-full text-[11.5px] font-semibold transition-all cursor-pointer whitespace-nowrap ${
                     activeTab === 'Socials'
                       ? 'bg-[#B9D99A] text-[#1E2E17]'
                       : 'text-[#68716A] hover:text-[#111613]'
@@ -298,7 +298,7 @@ export default function App() {
                 </button>
                 <button
                   onClick={() => setIsContactOpen(true)}
-                  className="px-3 py-1 rounded-full text-[11.5px] font-bold text-[#111613] hover:text-[#FF6B3D] transition-colors cursor-pointer"
+                  className="px-3 py-1 rounded-full text-[11.5px] font-bold text-[#111613] hover:text-[#FF6B3D] transition-colors cursor-pointer whitespace-nowrap"
                 >
                   Chat Now
                 </button>
@@ -315,7 +315,7 @@ export default function App() {
             </div>
 
             {/* Main Body inside Green Container: 2-Column Split */}
-            <div className="grid grid-cols-2 gap-3.5 flex-1 min-h-0 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5 flex-1 min-h-0 items-stretch">
               
               {/* -------------------------------------------------------------
                   Column A (Left Inner Column, ~48% width):
@@ -417,7 +417,7 @@ export default function App() {
                 {/* Tall Vertical Framed Poster Card (White Border + Artistic Sliced Portrait) */}
                 <div
                   onClick={() => setSelectedCard('Brand Makeover Case Study')}
-                  className="bg-[#F2EFE9] rounded-[22px] border-2 border-white overflow-hidden relative flex-1 min-h-0 shadow-xs cursor-pointer group flex flex-col justify-between p-2 select-none"
+                  className="bg-[#F2EFE9] rounded-[22px] border-2 border-white overflow-hidden relative flex-1 min-h-[260px] sm:min-h-[280px] lg:min-h-0 shadow-xs cursor-pointer group flex flex-col justify-between p-2 select-none"
                 >
                   {/* Sliced Face Mosaic Container */}
                   <div className="relative w-full flex-1 min-h-0 rounded-[14px] overflow-hidden bg-[#EBE7DF] grid grid-cols-2 grid-rows-3 gap-[2px]">
@@ -526,7 +526,7 @@ export default function App() {
                 </div>
 
                 {/* Warm Cream / Light-Yellow Rounded Card #F8F4BA */}
-                <div className="bg-[#F8F4BA] rounded-[28px] p-4 flex-1 min-h-0 flex flex-col justify-between border border-[#EDE7A4]/70 shadow-xs relative overflow-hidden">
+                <div className="bg-[#F8F4BA] rounded-[24px] sm:rounded-[28px] p-4 flex-1 min-h-[280px] lg:min-h-0 flex flex-col justify-between border border-[#EDE7A4]/70 shadow-xs relative overflow-hidden mt-1 sm:mt-0">
                   
                   {/* Top: Large Headline + Hand-Drawn White Looping Arrow */}
                   <div className="relative pt-1">
@@ -638,12 +638,14 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            onClick={() => setIsContactOpen(false)}
             className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4"
           >
             <motion.div
               initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.92, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
               className="bg-white rounded-[28px] p-6 max-w-sm w-full shadow-2xl border border-[#EDEDED]"
             >
               <div className="flex items-center justify-between mb-4">
@@ -701,12 +703,14 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            onClick={() => setIsMobileMenuOpen(false)}
             className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-start justify-end p-4"
           >
             <motion.div
               initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 50, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
               className="bg-white rounded-[24px] p-5 w-72 shadow-2xl border border-[#EDEDED] flex flex-col gap-3 mt-12"
             >
               <div className="flex items-center justify-between border-b border-[#F0F0ED] pb-3">
@@ -755,12 +759,14 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            onClick={() => setSelectedCard(null)}
             className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4"
           >
             <motion.div
               initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.92, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
               className="bg-white rounded-[28px] p-6 max-w-md w-full shadow-2xl border border-[#EDEDED]"
             >
               <div className="flex items-center justify-between mb-3">
