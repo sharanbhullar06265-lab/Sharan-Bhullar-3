@@ -1,5 +1,7 @@
 # DESIGNMYSITES - Web Design & Social Growth
 
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/sharanbhullar06265-lab/Sharan-Bhullar-3)
+
 A modern, high-converting digital agency website showcasing custom WordPress/Shopify design and multi-platform social media growth services.
 
 ## Tech Stack

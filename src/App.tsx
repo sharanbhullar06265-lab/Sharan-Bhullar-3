@@ -21,7 +21,7 @@ export default function App() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedEmail, setSubmittedEmail] = useState(false);
-  const [activeTab, setActiveTab] = useState<'Portfolio' | 'Web Design' | 'Social Media' | 'About'>('Social Media');
+  const [activeTab, setActiveTab] = useState<'Portfolio' | 'Web Design' | 'Social Media' | 'About'>('Portfolio');
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
   const [selectedCard, setSelectedCard] = useState<string | null>(null);

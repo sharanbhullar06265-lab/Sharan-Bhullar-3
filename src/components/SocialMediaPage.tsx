@@ -87,12 +87,14 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({
           </div>
 
           {/* Centered Menu Links (Desktop) */}
-          <nav className="hidden md:flex items-center gap-7 lg:gap-9 text-[13px] sm:text-[14px] font-medium text-[#2B2B2B]">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-[13px] sm:text-[14px] font-medium text-[#2B2B2B]">
             <button 
               onClick={onBackToPortfolio}
-              className="text-[#1A1A1A] font-semibold hover:text-[#F0616B] transition-colors cursor-pointer min-h-[44px] flex items-center"
+              className="text-[#1A1A1A] font-bold hover:text-[#F0616B] transition-colors cursor-pointer min-h-[44px] flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/70 hover:bg-white shadow-xs border border-[#E5DFD4]"
+              title="Return to Main Portfolio"
             >
-              Home
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>Portfolio</span>
             </button>
             <button 
               onClick={() => scrollToSection('about')}
@@ -157,9 +159,12 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({
                   setIsMobileMenuOpen(false);
                   onBackToPortfolio();
                 }}
-                className="w-full min-h-[44px] px-4 py-2.5 rounded-xl text-left text-[14px] font-semibold text-[#1A1A1A] hover:bg-[#F5F1E8] transition-colors flex items-center justify-between cursor-pointer"
+                className="w-full min-h-[44px] px-4 py-2.5 rounded-xl text-left text-[14px] font-bold text-[#1A1A1A] bg-[#EBE7DF]/70 hover:bg-[#EBE7DF] transition-colors flex items-center justify-between cursor-pointer"
               >
-                <span>Home</span>
+                <span className="flex items-center gap-2">
+                  <ArrowLeft className="w-4 h-4" />
+                  <span>Back to Portfolio</span>
+                </span>
                 <ChevronRight className="w-4 h-4 text-[#888]" />
               </button>
               <button
