@@ -61,29 +61,29 @@ export const VisionSection: React.FC<VisionSectionProps> = ({
   ];
 
   return (
-    <section id="services" className="py-16 sm:py-24 px-6 sm:px-12 md:px-16 border-t border-[#E7E6E2]/80">
+    <section id="services" className="py-16 sm:py-24 px-6 sm:px-12 md:px-16 border-t border-[#E1E4DF]">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        {/* Left Column: E-Commerce / Marketplace Showcase (Matches Video 00:04) */}
+        {/* Left Column: E-Commerce / Marketplace Showcase */}
         <div className="lg:col-span-5 flex flex-col justify-between">
           <div>
             <div className="inline-flex items-center gap-2 mb-3">
-              <span className="text-[#20B8B0] font-extrabold text-[12px] sm:text-[13px] tracking-[0.2em] uppercase">
+              <span className="text-[#FA6A38] font-extrabold text-[12px] sm:text-[13px] tracking-[0.2em] uppercase">
                 {activeTab === 'ecom' ? 'E-COMMERCE' : activeTab === 'business' ? 'CUSTOM WEBSITES' : 'LOCAL BUSINESS'}
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl font-black text-[#141414] tracking-tight leading-[1.08] mb-5">
+            <h2 className="text-3xl sm:text-5xl font-black text-[#111613] tracking-tight leading-[1.08] mb-5">
               {activeTab === 'ecom' ? (
-                <>Showcase, Sell,<br />&amp; acquire arts to our marketplace<span className="text-[#20B8B0]">.</span></>
+                <>Showcase, Sell,<br />&amp; acquire arts to our marketplace<span className="text-[#FA6A38]">.</span></>
               ) : activeTab === 'business' ? (
-                <>Websites built for<br />high conversion &amp; growth<span className="text-[#20B8B0]">.</span></>
+                <>Websites built for<br />high conversion &amp; growth<span className="text-[#FA6A38]">.</span></>
               ) : (
-                <>Attract local clients<br />with instant booking<span className="text-[#20B8B0]">.</span></>
+                <>Attract local clients<br />with instant booking<span className="text-[#FA6A38]">.</span></>
               )}
             </h2>
 
-            <p className="text-base text-[#6E6E6E] font-medium leading-relaxed max-w-md mb-8">
+            <p className="text-base text-[#68716A] font-medium leading-relaxed max-w-md mb-8">
               {activeTab === 'ecom'
                 ? 'Dynamic community where artists and buyers seamlessly merge. ArtFusion brings together creators and enthusiasts to share creativity and build commerce.'
                 : 'Every business is unique. We build clean layouts, direct messaging, and fast loading pages that convert casual visitors into paying customers.'}
@@ -93,7 +93,7 @@ export const VisionSection: React.FC<VisionSectionProps> = ({
             <div className="flex items-center gap-5 flex-wrap">
               <button
                 onClick={() => onSelectService('E-Commerce Package')}
-                className="inline-flex items-center gap-2 bg-[#141414] text-white px-6 py-3 rounded-full text-[14px] font-bold hover:bg-[#20B8B0] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer shadow-md"
+                className="inline-flex items-center gap-2 bg-[#FA6A38] text-white px-6 py-3 rounded-full text-[14px] font-bold hover:bg-[#E85A28] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer shadow-[0_4px_14px_rgba(250,106,56,0.35)]"
               >
                 <span>Join for $199/mo</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -101,7 +101,7 @@ export const VisionSection: React.FC<VisionSectionProps> = ({
 
               <button
                 onClick={onExploreWork}
-                className="text-[14px] font-bold text-[#141414] hover:text-[#20B8B0] transition-colors cursor-pointer"
+                className="text-[14px] font-bold text-[#111613] hover:text-[#FA6A38] transition-colors cursor-pointer"
               >
                 Read more →
               </button>
@@ -109,33 +109,33 @@ export const VisionSection: React.FC<VisionSectionProps> = ({
           </div>
 
           {/* Quick Badges */}
-          <div className="flex items-center gap-3.5 flex-wrap pt-8 mt-4 border-t border-[#E7E6E2]/60">
-            <div className="w-11 h-11 rounded-full border border-[#E7E6E2] bg-white flex items-center justify-center text-[#141414] shadow-xs" title="Custom UX Design">
-              <Layout className="w-4 h-4 text-[#20B8B0]" />
+          <div className="flex items-center gap-3.5 flex-wrap pt-8 mt-4 border-t border-[#E1E4DF]">
+            <div className="w-11 h-11 rounded-full border border-[#E1E4DF] bg-white flex items-center justify-center text-[#111613] shadow-xs" title="Custom UX Design">
+              <Layout className="w-4 h-4 text-[#FA6A38]" />
             </div>
-            <div className="w-11 h-11 rounded-full border border-[#E7E6E2] bg-white flex items-center justify-center text-[#141414] shadow-xs" title="Fast Mobile First">
-              <Zap className="w-4 h-4 text-[#20B8B0]" />
+            <div className="w-11 h-11 rounded-full border border-[#E1E4DF] bg-white flex items-center justify-center text-[#111613] shadow-xs" title="Fast Mobile First">
+              <Zap className="w-4 h-4 text-[#FA6A38]" />
             </div>
-            <div className="w-11 h-11 rounded-full border border-[#E7E6E2] bg-white flex items-center justify-center text-[#141414] shadow-xs" title="E-Commerce & Carts">
-              <ShoppingBag className="w-4 h-4 text-[#20B8B0]" />
+            <div className="w-11 h-11 rounded-full border border-[#E1E4DF] bg-white flex items-center justify-center text-[#111613] shadow-xs" title="E-Commerce & Carts">
+              <ShoppingBag className="w-4 h-4 text-[#FA6A38]" />
             </div>
-            <div className="w-11 h-11 rounded-full border border-[#E7E6E2] bg-white flex items-center justify-center text-[#141414] shadow-xs" title="Lead Funnels">
-              <CheckCircle2 className="w-4 h-4 text-[#20B8B0]" />
+            <div className="w-11 h-11 rounded-full border border-[#E1E4DF] bg-white flex items-center justify-center text-[#111613] shadow-xs" title="Lead Funnels">
+              <CheckCircle2 className="w-4 h-4 text-[#FA6A38]" />
             </div>
           </div>
         </div>
 
-        {/* Right Column: 3D Stacked Card Showcase (Matches Video 00:04-00:05) */}
+        {/* Right Column: 3D Stacked Card Showcase */}
         <div className="lg:col-span-7 flex flex-col items-center">
           
           {/* Tab Selector */}
-          <div className="inline-flex bg-[#F3F3F1] rounded-full p-1.5 mb-8 border border-[#E7E6E2]">
+          <div className="inline-flex bg-[#F4F6F2] rounded-full p-1.5 mb-8 border border-[#E1E4DF]">
             <button
               onClick={() => setActiveTab('ecom')}
               className={`px-5 py-2 rounded-full text-[13px] font-bold transition-all cursor-pointer ${
                 activeTab === 'ecom'
-                  ? 'bg-[#141414] text-white shadow-xs'
-                  : 'text-[#6E6E6E] hover:text-[#141414]'
+                  ? 'bg-[#111613] text-white shadow-xs'
+                  : 'text-[#68716A] hover:text-[#111613]'
               }`}
             >
               E-Commerce
@@ -144,8 +144,8 @@ export const VisionSection: React.FC<VisionSectionProps> = ({
               onClick={() => setActiveTab('business')}
               className={`px-5 py-2 rounded-full text-[13px] font-bold transition-all cursor-pointer ${
                 activeTab === 'business'
-                  ? 'bg-[#141414] text-white shadow-xs'
-                  : 'text-[#6E6E6E] hover:text-[#141414]'
+                  ? 'bg-[#111613] text-white shadow-xs'
+                  : 'text-[#68716A] hover:text-[#111613]'
               }`}
             >
               Business Website
@@ -154,8 +154,8 @@ export const VisionSection: React.FC<VisionSectionProps> = ({
               onClick={() => setActiveTab('local')}
               className={`px-5 py-2 rounded-full text-[13px] font-bold transition-all cursor-pointer ${
                 activeTab === 'local'
-                  ? 'bg-[#141414] text-white shadow-xs'
-                  : 'text-[#6E6E6E] hover:text-[#141414]'
+                  ? 'bg-[#111613] text-white shadow-xs'
+                  : 'text-[#68716A] hover:text-[#111613]'
               }`}
             >
               Local &amp; Dining
@@ -169,9 +169,9 @@ export const VisionSection: React.FC<VisionSectionProps> = ({
             <motion.div
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -top-4 right-[25%] z-30 bg-white px-3.5 py-1.5 rounded-full shadow-md border border-[#E7E6E2] flex items-center gap-1.5 text-[12px] font-bold text-[#141414]"
+              className="absolute -top-4 right-[25%] z-30 bg-white px-3.5 py-1.5 rounded-full shadow-md border border-[#E1E4DF] flex items-center gap-1.5 text-[12px] font-bold text-[#111613]"
             >
-              <span className="w-2 h-2 rounded-full bg-[#20B8B0]" />
+              <span className="w-2 h-2 rounded-full bg-[#FA6A38]" />
               <span>@coplin</span>
             </motion.div>
 

@@ -18,102 +18,47 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, activeSection }) => 
   ];
 
   return (
-    <nav className="w-full flex items-center justify-between py-6 px-6 sm:px-12 border-b border-[#E7E6E2]/70">
-      {/* Brand Logo */}
-      <button
-        onClick={() => onNavigate('hero')}
-        className="flex items-center gap-2 text-left cursor-pointer group focus:outline-none"
-      >
-        <span className="font-extrabold text-[22px] tracking-tight text-[#141414]">
-          Design<span className="text-[#20B8B0]">MySite</span>
-        </span>
-      </button>
-
-      {/* Desktop Nav Links */}
-      <div className="hidden md:flex items-center gap-9 text-[14.5px] font-semibold text-[#6E6E6E]">
-        {navlinks.map((link) => (
-          <button
-            key={link.target}
-            onClick={() => onNavigate(link.target)}
-            className={`transition-colors hover:text-[#141414] cursor-pointer relative py-1 ${
-              activeSection === link.target || (link.target === 'work' && activeSection === 'hero')
-                ? 'text-[#141414] font-bold'
-                : ''
-            }`}
+    <nav className="w-full lg:absolute lg:top-0 lg:left-0 lg:w-1/2 flex items-center justify-between pt-6 sm:pt-8 pb-2 px-6 sm:px-10 lg:px-12 z-20 pointer-events-auto">
+      {/* Brand Logo & Studio Credential Badges */}
+      <div className="flex items-center gap-7 sm:gap-9">
+        <button
+          onClick={() => onNavigate('hero')}
+          className="flex flex-col text-left cursor-pointer group focus:outline-none"
+        >
+          <span className="font-extrabold text-[17px] sm:text-[19px] tracking-[0.34em] text-[#111613] uppercase font-['Outfit'] leading-none">
+            S T U D I O
+          </span>
+          <span
+            style={{
+              height: '12.5px',
+              width: '156.828px',
+              fontSize: '16.5px',
+              lineHeight: '14.5px',
+              fontWeight: 'bold',
+              fontFamily: 'system-ui',
+              textAlign: 'center',
+              textDecorationLine: 'underline',
+              fontStyle: 'normal',
+              borderStyle: 'solid',
+              borderWidth: '0px',
+              borderRadius: '0px',
+            }}
+            className="text-[#68716A] tracking-normal mt-1 inline-block"
           >
-            {link.label}
-            {(activeSection === link.target || (link.target === 'work' && activeSection === 'hero')) && (
-              <motion.span
-                layoutId="activeNavDot"
-                className="w-1.5 h-1.5 bg-[#20B8B0] rounded-full absolute -bottom-1.5 left-1/2 -translate-x-1/2"
-              />
-            )}
-          </button>
-        ))}
-      </div>
-
-      {/* Nav Right CTA & Theme */}
-      <div className="hidden sm:flex items-center gap-3">
-        <button
-          onClick={() => onNavigate('contact')}
-          className="inline-flex items-center gap-2 text-[#20B8B0] hover:text-white bg-transparent hover:bg-[#20B8B0] px-5 py-2.5 rounded-full text-[14px] font-bold border border-[#20B8B0]/80 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
-        >
-          <span>Let's Talk</span>
-          <ArrowRight className="w-3.5 h-3.5" />
+            Digital experiences
+          </span>
         </button>
 
-        <button
-          onClick={() => onNavigate('contact')}
-          className="w-9 h-9 rounded-full border border-[#E7E6E2] bg-white flex items-center justify-center text-[#141414] hover:bg-[#F3F3F1] transition-colors cursor-pointer"
-          title="Toggle mode"
-        >
-          <Moon className="w-4 h-4" />
-        </button>
+        {/* Credentials matching reference image */}
+        <div className="hidden sm:flex items-center gap-5 text-[12px] font-medium text-[#505752]">
+          <span className="flex items-center gap-1.5">
+            <span className="text-[#848B85] text-[11px]">✓</span> Design &amp; Creative
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="text-[#848B85] text-[11px]">✓</span> Awarded Design
+          </span>
+        </div>
       </div>
-
-      {/* Mobile Menu Toggle Button */}
-      <div className="flex md:hidden items-center gap-2">
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="w-10 h-10 rounded-full border border-[#E7E6E2] flex items-center justify-center text-[#141414] bg-white cursor-pointer"
-        >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
-      </div>
-
-      {/* Mobile Drawer */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="absolute top-20 left-4 right-4 bg-white rounded-2xl border border-[#E7E6E2] shadow-xl p-5 z-50 md:hidden flex flex-col gap-3"
-          >
-            {navlinks.map((link) => (
-              <button
-                key={link.target}
-                onClick={() => {
-                  onNavigate(link.target);
-                  setMobileMenuOpen(false);
-                }}
-                className="text-left text-[15px] font-bold text-[#141414] py-2 px-3 hover:bg-[#F3F3F1] rounded-xl transition-colors"
-              >
-                {link.label}
-              </button>
-            ))}
-            <button
-              onClick={() => {
-                onNavigate('contact');
-                setMobileMenuOpen(false);
-              }}
-              className="mt-2 w-full flex items-center justify-center gap-2 bg-[#20B8B0] text-white py-3 rounded-full font-bold text-[14px]"
-            >
-              <span>Let's Talk →</span>
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </nav>
   );
 };

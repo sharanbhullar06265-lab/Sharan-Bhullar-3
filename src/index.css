@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #F3F3F1;
+  --bg: #EAECE8;
   --surface: #FFFFFF;
-  --ink: #141414;
-  --muted: #6E6E6E;
-  --line: #E7E6E2;
-  --red: #E8402F;
-  --red-dark: #C22E1F;
-  --blue: #2A55FF;
-  --yellow: #E9FF4D;
-  --purple: #7C4DFF;
-  --card-navy: #141B33;
+  --ink: #111613;
+  --muted: #68716A;
+  --line: #E1E4DF;
+  --coral: #FA6A38;
+  --coral-hover: #E85A28;
+  --sage: #CCE4B2;
+  --sage-light: #E4F1D5;
+  --sage-dark: #375323;
+  --butter: #F6F2BE;
+  --rose: #EA3E69;
+  --card-navy: #151C17;
   --r-lg: 32px;
   --r-md: 22px;
   --r-sm: 14px;
-  --wrap: 1240px;
+  --wrap: 1300px;
 }
 
 @layer base {
   body {
-    font-family: 'Manrope', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--ink);
     background-color: var(--bg);
     overflow-x: hidden;
@@ -28,7 +30,7 @@
   }
 
   h1, h2, h3, h4, h5, h6, .dsp {
-    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     letter-spacing: -0.025em;
     font-weight: 800;
   }

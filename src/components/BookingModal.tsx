@@ -98,20 +98,20 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 w-9 h-9 rounded-full bg-[#F3F3F1] flex items-center justify-center text-[#141414] hover:bg-[#141414] hover:text-white transition-colors cursor-pointer"
+          className="absolute top-6 right-6 w-9 h-9 rounded-full bg-[#F4F6F2] flex items-center justify-center text-[#111613] hover:bg-[#111613] hover:text-white transition-colors cursor-pointer"
         >
           <X className="w-4 h-4" />
         </button>
 
         {submitted ? (
           <div className="text-center py-10 flex flex-col items-center">
-            <div className="w-16 h-16 rounded-full bg-[#E8402F]/10 text-[#E8402F] flex items-center justify-center mb-5">
+            <div className="w-16 h-16 rounded-full bg-[#FA6A38]/10 text-[#FA6A38] flex items-center justify-center mb-5">
               <CheckCircle2 className="w-9 h-9" />
             </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#141414] mb-2">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111613] mb-2">
               Inquiry Received!
             </h3>
-            <p className="text-sm text-[#6E6E6E] max-w-md mb-8 leading-relaxed">
+            <p className="text-sm text-[#68716A] max-w-md mb-8 leading-relaxed">
               Thank you, <strong>{formData.name || 'there'}</strong>! I will review your requirements for <strong>{formData.businessName || 'your project'}</strong> and respond within 4–6 hours with a concept roadmap and quote.
             </p>
 
@@ -127,7 +127,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </a>
               <button
                 onClick={onClose}
-                className="bg-[#141414] text-white px-6 py-3 rounded-full font-bold text-xs hover:bg-[#E8402F] transition-colors"
+                className="bg-[#111613] text-white px-6 py-3 rounded-full font-bold text-xs hover:bg-[#FA6A38] transition-colors"
               >
                 Done
               </button>
@@ -136,16 +136,16 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         ) : (
           <div>
             <div className="inline-flex items-center gap-2 mb-3">
-              <span className="w-2 h-2 rounded-full bg-[#E8402F]" />
-              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#6E6E6E]">
+              <span className="w-2 h-2 rounded-full bg-[#FA6A38]" />
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#68716A]">
                 PROJECT DISCOVERY &amp; CONSULTATION
               </span>
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#141414] tracking-tight mb-2">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#111613] tracking-tight mb-2">
               Let's build your website.
             </h3>
-            <p className="text-xs sm:text-sm text-[#6E6E6E] mb-6">
+            <p className="text-xs sm:text-sm text-[#68716A] mb-6">
               Fill out this quick brief and I'll prepare a custom roadmap for your business.
             </p>
 
@@ -153,7 +153,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               
               {/* Project Type */}
               <div>
-                <label className="block text-[11px] font-bold uppercase tracking-wider text-[#141414] mb-2">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-[#111613] mb-2">
                   1. Project Type
                 </label>
                 <div className="flex flex-wrap gap-2">
@@ -164,8 +164,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                       onClick={() => setFormData({ ...formData, projectType: t })}
                       className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                         formData.projectType === t
-                          ? 'bg-[#141414] text-white shadow-xs'
-                          : 'bg-[#F3F3F1] text-[#6E6E6E] hover:bg-[#E7E6E2]'
+                          ? 'bg-[#111613] text-white shadow-xs'
+                          : 'bg-[#F4F6F2] text-[#68716A] hover:bg-[#E1E4DF]'
                       }`}
                     >
                       {t}
@@ -176,7 +176,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
               {/* Scope & Features */}
               <div>
-                <label className="block text-[11px] font-bold uppercase tracking-wider text-[#141414] mb-2">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-[#111613] mb-2">
                   2. Key Deliverables
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -189,12 +189,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                         onClick={() => toggleFeature(feat)}
                         className={`p-2 rounded-xl text-left text-[11px] font-medium border transition-all flex items-center justify-between cursor-pointer ${
                           isSelected
-                            ? 'bg-[#E8402F]/10 border-[#E8402F] text-[#E8402F] font-bold'
-                            : 'bg-white border-[#E7E6E2] text-[#6E6E6E] hover:bg-[#F3F3F1]'
+                            ? 'bg-[#FA6A38]/10 border-[#FA6A38] text-[#FA6A38] font-bold'
+                            : 'bg-white border-[#E1E4DF] text-[#68716A] hover:bg-[#F4F6F2]'
                         }`}
                       >
                         <span className="truncate">{feat}</span>
-                        {isSelected && <CheckCircle2 className="w-3 h-3 text-[#E8402F] flex-shrink-0" />}
+                        {isSelected && <CheckCircle2 className="w-3 h-3 text-[#FA6A38] flex-shrink-0" />}
                       </button>
                     );
                   })}
@@ -204,7 +204,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               {/* Name & Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-wider text-[#141414] mb-1">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-[#111613] mb-1">
                     Your Name *
                   </label>
                   <input
@@ -213,12 +213,12 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     placeholder="e.g. Alex Morgan"
                     value={formData.name}
                     onChange={e => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-[#F3F3F1] border border-[#E7E6E2] rounded-xl px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#E8402F]"
+                    className="w-full bg-[#F4F6F2] border border-[#E1E4DF] rounded-xl px-3.5 py-2.5 text-xs text-[#111613] focus:outline-none focus:border-[#FA6A38]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-wider text-[#141414] mb-1">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-[#111613] mb-1">
                     Email Address *
                   </label>
                   <input
@@ -227,7 +227,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     placeholder="alex@company.com"
                     value={formData.email}
                     onChange={e => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-[#F3F3F1] border border-[#E7E6E2] rounded-xl px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#E8402F]"
+                    className="w-full bg-[#F4F6F2] border border-[#E1E4DF] rounded-xl px-3.5 py-2.5 text-xs text-[#111613] focus:outline-none focus:border-[#FA6A38]"
                   />
                 </div>
               </div>
@@ -235,7 +235,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               {/* Business Name & Budget */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-wider text-[#141414] mb-1">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-[#111613] mb-1">
                     Business / Brand
                   </label>
                   <input
@@ -243,18 +243,18 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     placeholder="e.g. Cafe Noor"
                     value={formData.businessName}
                     onChange={e => setFormData({ ...formData, businessName: e.target.value })}
-                    className="w-full bg-[#F3F3F1] border border-[#E7E6E2] rounded-xl px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#E8402F]"
+                    className="w-full bg-[#F4F6F2] border border-[#E1E4DF] rounded-xl px-3.5 py-2.5 text-xs text-[#111613] focus:outline-none focus:border-[#FA6A38]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] font-bold uppercase tracking-wider text-[#141414] mb-1">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-[#111613] mb-1">
                     Estimated Budget Tier
                   </label>
                   <select
                     value={formData.budgetTier}
                     onChange={e => setFormData({ ...formData, budgetTier: e.target.value })}
-                    className="w-full bg-[#F3F3F1] border border-[#E7E6E2] rounded-xl px-3.5 py-2.5 text-xs text-[#141414] focus:outline-none focus:border-[#E8402F]"
+                    className="w-full bg-[#F4F6F2] border border-[#E1E4DF] rounded-xl px-3.5 py-2.5 text-xs text-[#111613] focus:outline-none focus:border-[#FA6A38]"
                   >
                     {budgetOptions.map(b => (
                       <option key={b} value={b}>{b}</option>
@@ -265,7 +265,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
               {/* Message */}
               <div>
-                <label className="block text-[11px] font-bold uppercase tracking-wider text-[#141414] mb-1">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-[#111613] mb-1">
                   Tell me briefly about what you need
                 </label>
                 <textarea
@@ -273,7 +273,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                   placeholder="Goals, target launch date, existing website link..."
                   value={formData.message}
                   onChange={e => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-[#F3F3F1] border border-[#E7E6E2] rounded-xl p-3 text-xs text-[#141414] focus:outline-none focus:border-[#E8402F] resize-none"
+                  className="w-full bg-[#F4F6F2] border border-[#E1E4DF] rounded-xl p-3 text-xs text-[#111613] focus:outline-none focus:border-[#FA6A38] resize-none"
                 />
               </div>
 
@@ -282,7 +282,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full sm:flex-1 bg-[#141414] hover:bg-[#E8402F] text-white py-3.5 rounded-full font-bold text-xs transition-all shadow-md cursor-pointer disabled:opacity-50"
+                  className="w-full sm:flex-1 bg-[#111613] hover:bg-[#FA6A38] text-white py-3.5 rounded-full font-bold text-xs transition-all shadow-md cursor-pointer disabled:opacity-50"
                 >
                   {isSubmitting ? 'Sending Brief...' : 'Send Project Brief →'}
                 </button>
@@ -299,7 +299,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               </div>
 
               <div className="flex items-center justify-center gap-2 text-[11px] text-[#8E8E8E] pt-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#2A55FF]" />
+                <ShieldCheck className="w-3.5 h-3.5 text-[#375323]" />
                 <span>100% Confidential • Fixed-Price Guarantee</span>
               </div>
 

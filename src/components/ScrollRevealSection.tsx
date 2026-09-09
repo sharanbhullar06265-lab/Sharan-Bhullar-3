@@ -37,14 +37,14 @@ export const ScrollRevealSection: React.FC = () => {
         
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#E8402F]" />
-          <span className="text-[12px] font-extrabold uppercase tracking-[0.1em] text-[#6E6E6E]">
+          <span className="w-2 h-2 rounded-full bg-[#FA6A38]" />
+          <span className="text-[12px] font-extrabold uppercase tracking-[0.1em] text-[#68716A]">
             THE MANIFESTO
           </span>
         </div>
 
         {/* Dynamic Highlighted Words */}
-        <p className="text-2xl sm:text-4xl md:text-[44px] font-extrabold leading-[1.3] tracking-tight transition-colors duration-300">
+        <p className="text-2xl sm:text-4xl md:text-[42px] font-extrabold leading-[1.3] tracking-tight transition-colors duration-300">
           {words.map((word, idx) => {
             const isHighlighted = hoverIndex !== null ? idx <= hoverIndex : idx < activeCount;
             const isAccent = word.toLowerCase().includes('design') || word.toLowerCase().includes('code') || word.toLowerCase().includes('vision');
@@ -57,9 +57,9 @@ export const ScrollRevealSection: React.FC = () => {
                 className={`inline-block mr-2.5 transition-colors duration-300 cursor-default ${
                   isHighlighted
                     ? isAccent
-                      ? 'text-[#E8402F]'
-                      : 'text-[#141414]'
-                    : 'text-[#D1D0CB]'
+                      ? 'text-[#FA6A38]'
+                      : 'text-[#111613]'
+                    : 'text-[#CCD1CB]'
                 }`}
               >
                 {word}
@@ -70,14 +70,14 @@ export const ScrollRevealSection: React.FC = () => {
 
         {/* 3 Circular Icon Badges */}
         <div className="flex items-center justify-center gap-4 mt-10">
-          <div className="w-11 h-11 rounded-full border border-[#E7E6E2] bg-white flex items-center justify-center text-[#141414] shadow-xs hover:border-[#141414] hover:scale-105 transition-all">
-            <PenTool className="w-4 h-4" />
+          <div className="w-11 h-11 rounded-full border border-[#E1E4DF] bg-white flex items-center justify-center text-[#111613] shadow-xs hover:border-[#FA6A38] hover:scale-105 transition-all">
+            <PenTool className="w-4 h-4 text-[#FA6A38]" />
           </div>
-          <div className="w-11 h-11 rounded-full border border-[#E7E6E2] bg-white flex items-center justify-center text-[#141414] shadow-xs hover:border-[#141414] hover:scale-105 transition-all">
-            <Monitor className="w-4 h-4" />
+          <div className="w-11 h-11 rounded-full border border-[#E1E4DF] bg-white flex items-center justify-center text-[#111613] shadow-xs hover:border-[#FA6A38] hover:scale-105 transition-all">
+            <Monitor className="w-4 h-4 text-[#111613]" />
           </div>
-          <div className="w-11 h-11 rounded-full border border-[#E7E6E2] bg-white flex items-center justify-center text-[#141414] shadow-xs hover:border-[#141414] hover:scale-105 transition-all">
-            <Plus className="w-4 h-4" />
+          <div className="w-11 h-11 rounded-full border border-[#E1E4DF] bg-white flex items-center justify-center text-[#111613] shadow-xs hover:border-[#FA6A38] hover:scale-105 transition-all">
+            <Plus className="w-4 h-4 text-[#68716A]" />
           </div>
         </div>
 
