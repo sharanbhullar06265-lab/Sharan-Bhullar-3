@@ -76,13 +76,13 @@ export const SocialMediaPage: React.FC<SocialMediaPageProps> = ({
             TOP NAVIGATION BAR
            ========================================================================= */}
         <header className="w-full flex items-center justify-between shrink-0 relative z-30">
-          {/* Logo Left: Circle icon with dot + "Pro" */}
+          {/* Logo Left: Circle icon with dot + "Social Manager" */}
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full bg-[#1A1A1A] flex items-center justify-center">
+            <div className="w-6 h-6 rounded-full bg-[#1A1A1A] flex items-center justify-center shrink-0">
               <div className="w-2 h-2 rounded-full bg-white ml-0.5" />
             </div>
-            <span className="text-[20px] font-extrabold tracking-tight text-[#1A1A1A] font-['Outfit',sans-serif]">
-              Pro
+            <span className="text-[17px] sm:text-[20px] font-extrabold tracking-tight text-[#1A1A1A] font-['Outfit',sans-serif] whitespace-nowrap">
+              Social Manager
             </span>
           </div>
 

@@ -21,7 +21,7 @@ export default function App() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedEmail, setSubmittedEmail] = useState(false);
-  const [activeTab, setActiveTab] = useState<'Portfolio' | 'Web Design' | 'Social Media' | 'About'>('Portfolio');
+  const [activeTab, setActiveTab] = useState<'Portfolio' | 'Web Design' | 'Social Media' | 'About'>('Web Design');
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
   const [selectedCard, setSelectedCard] = useState<string | null>(null);
@@ -119,6 +119,81 @@ export default function App() {
           )}
         </AnimatePresence>
       </main>
+    );
+  }
+
+  if (activeTab === 'Web Design') {
+    return (
+      <div className="w-full min-h-screen bg-[#0B0E11]">
+        <WebDesignPage
+          onOpenContact={() => setIsContactOpen(true)}
+          onBackToPortfolio={() => setActiveTab('Portfolio')}
+        />
+        {/* Contact / Consultation Modal */}
+        <AnimatePresence>
+          {isContactOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsContactOpen(false)}
+              className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4"
+            >
+              <motion.div
+                initial={{ scale: 0.92, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.92, opacity: 0 }}
+                onClick={(e) => e.stopPropagation()}
+                className="bg-[#151619] text-white rounded-[28px] p-6 max-w-md w-full shadow-2xl border border-[#282B33]"
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="w-8 h-8 rounded-full bg-[#FFC425] flex items-center justify-center text-[#0B0C0E]">
+                      <Phone className="w-4 h-4" />
+                    </span>
+                    <h3 className="font-extrabold text-[17px] text-white font-['Outfit']">Book Custom Build</h3>
+                  </div>
+                  <button
+                    onClick={() => setIsContactOpen(false)}
+                    aria-label="Close modal"
+                    className="w-10 h-10 rounded-full bg-[#202227] flex items-center justify-center text-white hover:bg-[#2C3038] cursor-pointer transition-colors"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+                <p className="text-[13px] text-[#8E95A5] mb-4 leading-relaxed">
+                  Discuss high-converting web design, custom fintech interfaces, or Shopify/WordPress development with our specialists.
+                </p>
+                
+                {bookingConfirmed ? (
+                  <div className="p-4 bg-[#14261C] border border-[#224A30] rounded-2xl text-center space-y-1">
+                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#22C55E] text-white mb-1">
+                      <Check className="w-4 h-4" />
+                    </span>
+                    <p className="text-[13px] font-bold text-[#4ADE80]">Consultation Reserved!</p>
+                    <p className="text-[11px] text-[#86EFAC]">We'll reach out directly to coordinate your strategy session.</p>
+                  </div>
+                ) : (
+                  <div className="space-y-2">
+                    <button
+                      onClick={handleBookCall}
+                      className="w-full min-h-[44px] bg-[#FFC425] hover:bg-[#F2B512] text-[#0A0B0E] py-2.5 px-4 rounded-full text-[13px] font-bold transition-colors cursor-pointer flex items-center justify-center gap-1.5"
+                    >
+                      Chat on WhatsApp
+                    </button>
+                    <button
+                      onClick={() => setIsContactOpen(false)}
+                      className="w-full min-h-[44px] bg-[#202227] hover:bg-[#2A2D35] text-white py-2.5 px-4 rounded-full text-[13px] font-semibold transition-colors cursor-pointer flex items-center justify-center"
+                    >
+                      Close
+                    </button>
+                  </div>
+                )}
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     );
   }
 
